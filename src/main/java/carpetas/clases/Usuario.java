@@ -19,6 +19,8 @@ public class Usuario{
         this.correo = correo;
         this.numeroTelefonico = numeroTelefonico;
     }
+
+    public Usuario(){}
     public int getCedula() {
         return cedula;
     }
@@ -62,6 +64,9 @@ public class Usuario{
         this.numeroTelefonico = numeroTelefonico;
     }
 
+    public void ejemploGit(){
+        System.out.println("Este es un ejemplo git");
+    }
     
 
 }
