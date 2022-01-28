@@ -64,9 +64,7 @@ public class Usuario{
         this.numeroTelefonico = numeroTelefonico;
     }
 
-    public void ejemploGit(){
-        System.out.println("Este es un ejemplo git");
-    }
+ 
     
 
 }
