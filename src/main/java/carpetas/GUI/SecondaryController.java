@@ -7,6 +7,6 @@ public class SecondaryController {
 
     @FXML
     private void switchToPrimary() throws IOException {
-        Main.setRoot("primary");
+        Main.setRoot("/carpetas/primary");
     }
 }
