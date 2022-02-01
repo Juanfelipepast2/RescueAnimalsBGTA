@@ -1,6 +1,7 @@
 package carpetas.clases;
 public class Animal{
     //Get and set Nombre_Animal, ID_Cliente, ID_Animal, Fecha_Nacimiento, Fecha_Ingreso, Fecha_Ultima_Desparacitacion
+    // prueba comentario
     private String Nombre_Animal;
     private int ID_Cliente;
     private int ID_Animal;
