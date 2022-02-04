@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="667.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17">
+  <tabs>
+    <Tab text="TabInicioDeSesion">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+                     <children>
+                        <Label layoutX="212.0" layoutY="34.0" text="Rescue Animals">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="218.0" layoutY="98.0" text="Usuario o ID de fundación:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="264.0" layoutY="174.0" text="Contraseña:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="202.0" layoutY="337.0" text="¿No tienes cuenta? Oprime aquí">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="290.0" layoutY="311.0" text="-o-">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="TextUsuario1" layoutX="226.0" layoutY="130.0" />
+                        <TextField fx:id="TextClave1" layoutX="226.0" layoutY="207.0" />
+                        <PasswordField fx:id="TextClave21" layoutX="226.0" layoutY="207.0" />
+                        <CheckBox layoutX="241.0" layoutY="237.0" mnemonicParsing="false" text="Mostrar contraseña" />
+                        <Button fx:id="BtnIniciarSesion1" layoutX="258.0" layoutY="281.0" mnemonicParsing="false" text="Iniciar sesión" />
+                        <Button fx:id="BtnRegistro1" layoutX="198.0" layoutY="335.0" mnemonicParsing="false" opacity="0.24" prefHeight="25.0" prefWidth="207.0" />
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="TabDecisionRegistro">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+                     <children>
+                        <Label layoutX="146.0" layoutY="88.0" text="¿Como te quieres registrar?">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="BtnIniciarSesion" layoutX="225.0" layoutY="155.0" mnemonicParsing="false" text="Persona Común">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="BtnRegistro" layoutX="225.0" layoutY="259.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="150.0" text="Fundación">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="BtnRegistro11" layoutX="24.0" layoutY="24.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="Volver" />
+                        <Label layoutX="289.0" layoutY="217.0" text="-ó-">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="TabRegistroNormal">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="372.0" prefWidth="600.0">
+                     <children>
+                        <ScrollPane prefHeight="640.0" prefWidth="600.0">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="515.0" prefWidth="585.0">
+                                 <children>
+                                    <Label layoutX="197.0" layoutY="26.0" text="Ingresa tus datos">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="268.0" layoutY="96.0" text="Usuario:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="258.0" layoutY="163.0" text="Contraseña:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="TextUsuario" layoutX="219.0" layoutY="127.0" />
+                                    <PasswordField fx:id="TextClave2" layoutX="219.0" layoutY="197.0" />
+                                    <Button fx:id="BtnCrearCuenta" layoutX="251.0" layoutY="471.0" mnemonicParsing="false" text="Crear cuenta" />
+                                    <Button fx:id="BtnRegistro2" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="Volver" />
+                                    <Label layoutX="229.0" layoutY="237.0" text="Repite tu contraseña:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <PasswordField layoutX="219.0" layoutY="268.0" />
+                                    <Label layoutX="265.0" layoutY="308.0" text="Telefono:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <PasswordField layoutX="219.0" layoutY="336.0" />
+                                    <Label layoutX="271.0" layoutY="378.0" text="Correo:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <PasswordField layoutX="219.0" layoutY="407.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="TabRegistroFundacion">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="372.0" prefWidth="600.0">
+                     <children>
+                        <ScrollPane prefHeight="638.0" prefWidth="600.0">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="591.0" prefWidth="585.0">
+                                 <children>
+                                    <Label layoutX="109.0" layoutY="27.0" text="Ingresa los datos de la fundación">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="284.0" layoutY="95.0" text="ID:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="258.0" layoutY="163.0" text="Contraseña:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="TextUsuario2" layoutX="219.0" layoutY="127.0" />
+                                    <PasswordField fx:id="TextClave22" layoutX="219.0" layoutY="197.0" />
+                                    <Button fx:id="BtnCrearCuenta1" layoutX="251.0" layoutY="545.0" mnemonicParsing="false" text="Crear cuenta" />
+                                    <Button fx:id="BtnRegistro3" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="Volver" />
+                                    <Label layoutX="230.0" layoutY="238.0" text="Repite la contraseña:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <PasswordField layoutX="219.0" layoutY="268.0" />
+                                    <Label layoutX="265.0" layoutY="308.0" text="Telefono:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <PasswordField layoutX="219.0" layoutY="336.0" />
+                                    <Label layoutX="271.0" layoutY="378.0" text="Correo:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <PasswordField layoutX="219.0" layoutY="407.0" />
+                                    <Label layoutX="262.0" layoutY="455.0" text="Dirección:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <PasswordField layoutX="218.0" layoutY="489.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
