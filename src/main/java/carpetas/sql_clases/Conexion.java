@@ -8,7 +8,7 @@ public class Conexion {
     public static Connection getConnection(){
         Connection conn = null;
         try {
-            String url = "src/main/resources/DB/BaseDeDatos.db"; 
+            String url = "src/main/resources/carpetas/DB/BaseDeDatos.db"; 
             conn = DriverManager.getConnection("jdbc:sqlite:" + url);
             System.out.println("Conexion exitosa.");
         }catch (SQLException ex) {
