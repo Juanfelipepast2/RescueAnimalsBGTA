@@ -26,7 +26,7 @@ public class imageTest {
 
         //AHORA MISMO NO FUNCIONA DEBIDO A QUE NO HAY IMAGENES ALMACENADAS EN LA DB MOMENTANEAMENTE
         try {
-            String query = "SELECT imagen FROM <<NOMBRE TABLA>> WHERE id = ";
+            String query = "SELECT imagen FROM imagenUsuario WHERE id = 2";
             Connection conn = Conexion.getConnection();
             PreparedStatement ps = conn.prepareStatement(query);
             ResultSet rs = ps.executeQuery();

@@ -1,0 +1,24 @@
+#caja{
+    -fx-background-color : rgb(5, 0, 54);
+        background-color: rgb(5, 0, 54);
+
+}
+
+.button {
+    -fx-opacity : 1;
+        opacity : 1;
+    color: antiquewhite;    
+    -fx-border-style :"solid";
+        border-style: "solid";
+    -fx-border-radius : 0px;
+        border-radius : 0px;
+    -fx-text-fill : white;
+}
+
+
+.button:hover{
+    -fx-background-color : rgb(9, 0, 90);
+        background-color : rgb(9, 0, 90);
+
+    
+}
