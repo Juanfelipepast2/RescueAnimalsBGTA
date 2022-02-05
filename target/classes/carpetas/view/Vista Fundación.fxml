@@ -40,54 +40,66 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox minHeight="620.0" minWidth="1030.0" prefHeight="620.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carpetas.GUI.VistaFundacionControlador">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
-            <TabPane prefHeight="400.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE">
+            <TabPane prefHeight="620.0" prefWidth="1030.0" tabClosingPolicy="UNAVAILABLE">
               <tabs>
                 <Tab text="Añadir animal">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="210.0" prefWidth="641.0">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="596.0" prefWidth="1034.0">
                            <children>
-                              <Button layoutX="287.0" layoutY="316.0" mnemonicParsing="false" text="Agregar animal en adopción">
-                                 <font>
-                                    <Font name="Britannic Bold" size="18.0" />
-                                 </font>
-                                 <cursor>
-                                    <Cursor fx:constant="OPEN_HAND" />
-                                 </cursor>
-                              </Button>
-                              <TextField layoutX="105.0" layoutY="272.0" prefHeight="25.0" prefWidth="431.0" />
-                              <TextField layoutX="105.0" layoutY="198.0" prefHeight="25.0" prefWidth="431.0" />
-                              <TextField alignment="CENTER" layoutX="105.0" layoutY="122.0" prefHeight="25.0" prefWidth="431.0" />
-                              <Label alignment="CENTER" layoutX="105.0" layoutY="95.0" prefHeight="27.0" prefWidth="245.0" style="&#10;" text="Ingrese el nombre del animal:">
-                                 <font>
-                                    <Font name="Britannic Bold" size="18.0" fx:id="x1" />
-                                 </font>
-                              </Label>
-                              <Label alignment="CENTER" layoutX="105.0" layoutY="171.0" prefHeight="27.0" prefWidth="326.0" style="&#10;" text="Ingrese el tipo de animal (perro o gato):">
-                                 <font>
-                                    <Font name="Britannic Bold" size="18.0" fx:id="x11" />
-                                 </font>
-                              </Label>
-                              <Label alignment="CENTER" layoutX="105.0" layoutY="245.0" prefHeight="27.0" prefWidth="238.0" style="&#10;" text="Ingrese el nombre del animal">
-                                 <font>
-                                    <Font name="Britannic Bold" size="18.0" fx:id="x111" />
-                                 </font>
-                              </Label>
-                              <Label alignment="CENTER" layoutX="92.0" layoutY="38.0" prefHeight="37.0" prefWidth="431.0" style="&#10;" text="AGREGAR ANIMAL PARA LA ADOPCIÓN" textFill="#a11c01">
-                                 <font>
-                                    <Font name="Britannic Bold" size="24.0" fx:id="x12" />
-                                 </font>
-                                 <cursor>
-                                    <Cursor fx:constant="DEFAULT" />
-                                 </cursor>
-                              </Label>
+                            <AnchorPane prefHeight="580.0" prefWidth="1021.0">
+                                 <children>
+                                    <Button fx:id="botonAgregarAnimal" layoutX="401.0" layoutY="403.0" mnemonicParsing="false" onAction="#AgregarAnimal" text="Agregar animal en adopción">
+                                       <font>
+                                          <Font name="Britannic Bold" size="18.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="OPEN_HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <TextField fx:id="textoTipoAnimal" layoutX="94.0" layoutY="180.0" prefHeight="25.0" prefWidth="431.0" />
+                                    <TextField fx:id="textoRazaAnimal" layoutX="94.0" layoutY="242.0" prefHeight="25.0" prefWidth="431.0" />
+                                    <TextField fx:id="textoNombreAnimal" alignment="TOP_LEFT" layoutX="95.0" layoutY="104.0" prefHeight="18.0" prefWidth="429.0" />
+                                    <Label alignment="CENTER" layoutX="93.0" layoutY="71.0" prefHeight="27.0" prefWidth="245.0" style="&#10;" text="Ingrese el nombre del animal:">
+                                       <font>
+                                          <Font name="Britannic Bold" size="18.0" fx:id="x1" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="94.0" layoutY="145.0" prefHeight="27.0" prefWidth="326.0" style="&#10;" text="Ingrese el tipo de animal (perro o gato):">
+                                       <font>
+                                          <Font name="Britannic Bold" size="18.0" fx:id="x11" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="94.0" layoutY="220.0" prefHeight="27.0" prefWidth="211.0" style="&#10;" text="Ingrese la raza del animal">
+                                       <font>
+                                          <Font name="Britannic Bold" size="18.0" fx:id="x111" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="102.0" layoutY="21.0" prefHeight="37.0" prefWidth="431.0" style="&#10;" text="AGREGAR ANIMAL PARA LA ADOPCIÓN" textFill="#a11c01">
+                                       <font>
+                                          <Font name="Britannic Bold" size="24.0" fx:id="x12" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor>
+                                    </Label>
+                                    <Button fx:id="botonImagen" layoutX="610.0" layoutY="133.0" mnemonicParsing="false" onAction="#InsertarFoto" text="Seleccionar una imágen" />
+                                    <Label alignment="CENTER" layoutX="610.0" layoutY="72.0" prefHeight="27.0" prefWidth="252.0" style="&#10;" text="Inserte una imágen del animal">
+                                       <font>
+                                          <Font name="Britannic Bold" size="18.0" fx:id="x1111" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="vistaImagen" fitHeight="150.0" fitWidth="200.0" layoutX="799.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </AnchorPane>
                            </children>
                         </AnchorPane>
                   </content>
