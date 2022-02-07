@@ -2,7 +2,7 @@ package carpetas.sql_clases;
 
 import java.sql.*;
 
-import carpetas.sql_clases.*;
+
 import carpetas.clases.*;
 
 
@@ -21,7 +21,7 @@ public class CRUD {
             ps.setString(5, Usuario.getCorreo());
             ps.setString(6, Usuario.getContraseña());
             ps.setInt(7, Usuario.getNumeroTelefonico());
-            ps.setBytes(8, Usuario.getFoto());
+            //ps.setBytes(8, Usuario.getFoto());
             ps.execute();
             conexion.close();
         } catch (SQLException e) {
@@ -30,14 +30,15 @@ public class CRUD {
     }
     public static Usuario leerUsuario(String Nickname) {
         //Leer usuario
-        Usuario Usuario = new Usuario();
+        Usuario Usuario = null;
         try {
             Connection conexion = Conexion.getConnection();
             String sql = "SELECT * FROM USUARIO WHERE Nickname = ?";
             PreparedStatement ps = conexion.prepareStatement(sql);
-            //ps.setString(1, Usuario.getUsername());
+            ps.setString(1, Nickname);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
+                Usuario = new Usuario();
                 Usuario.setCedula(rs.getInt("Cedula"));
                 Usuario.setUsername(rs.getString("Nickname"));
                 Usuario.setNombre(rs.getString("Nombre"));
@@ -52,4 +53,6 @@ public class CRUD {
             e.printStackTrace();
         }   return Usuario;
     }
+
+    
 }

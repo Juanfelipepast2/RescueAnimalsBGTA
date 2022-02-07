@@ -36,9 +36,9 @@
          </font>
       </Label>
       <TextField fx:id="TextUsuario" layoutX="226.0" layoutY="130.0" />
-      <TextField fx:id="TextClave" layoutX="226.0" layoutY="207.0" />
+      <TextField fx:id="TextClave" layoutX="226.0" layoutY="207.0" visible="false" />
       <PasswordField fx:id="TextClave2" layoutX="226.0" layoutY="207.0" />
-      <CheckBox fx:id="CheckBoxClave" layoutX="241.0" layoutY="237.0" mnemonicParsing="false" text="Mostrar contraseña" />
+      <CheckBox fx:id="CheckBoxClave" layoutX="241.0" layoutY="237.0" mnemonicParsing="false" onAction="#mostrarContrasena" text="Mostrar contraseña" />
       <Button fx:id="BtnIniciarSesion" layoutX="258.0" layoutY="281.0" mnemonicParsing="false" onAction="#IniciarSesionClic" text="Iniciar sesión" />
       <Button fx:id="BtnRegistro" layoutX="198.0" layoutY="335.0" mnemonicParsing="false" opacity="0.24" prefHeight="25.0" prefWidth="207.0" />
    </children>

@@ -31,6 +31,7 @@ public class imageTest {
             PreparedStatement ps = conn.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
             InputStream is = rs.getBinaryStream("imagen");
+            
             img.setImage(new Image(is));
         } catch (Exception e) {
             System.out.println(e + " XD");
