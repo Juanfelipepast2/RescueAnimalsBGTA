@@ -1,26 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carpetas.GUI.ControladorBaseUsuario">
    <children>
       <VBox id="caja" prefHeight="720.0" prefWidth="240.0" stylesheets="@../css/Style.css">
          <children>
-            <JFXButton fx:id="Boton1" onAction="#pressBoton1" prefHeight="100.0" prefWidth="240.0" text="Escena 1" />
-            <JFXButton fx:id="boton2" onAction="#pressBoton2" prefHeight="100.0" prefWidth="240.0" text="Escena 2" />
-            <JFXButton fx:id="boton3" onAction="#pressBoton3" prefHeight="100.0" prefWidth="240.0" text="Escena 3" />
-            <JFXButton prefHeight="100.0" prefWidth="240.0" text="Escena 4" />
-            <JFXButton prefHeight="100.0" prefWidth="240.0" text="Escena 5" />
-            <JFXButton prefHeight="100.0" prefWidth="240.0" text="Escena 6" />
-            <JFXButton prefHeight="100.0" prefWidth="240.0" text="Escena 7" />
+            <JFXButton fx:id="Boton1" onAction="#pressBoton1" prefHeight="60.0" prefWidth="200.0" text="Escena 1">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="50.0" left="40.0" top="10.0" />
+               </VBox.margin></JFXButton>
+            <JFXButton fx:id="boton2" onAction="#pressBoton2" prefHeight="40.0" prefWidth="200.0" text="Escena 2">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="50.0" left="40.0" top="10.0" />
+               </VBox.margin></JFXButton>
+            <JFXButton fx:id="boton3" onAction="#pressBoton3" prefHeight="40.0" prefWidth="200.0" text="Escena 3">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="50.0" left="40.0" top="10.0" />
+               </VBox.margin></JFXButton>
+            <JFXButton prefHeight="40.0" prefWidth="200.0" text="Escena 4">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="50.0" left="40.0" top="10.0" />
+               </VBox.margin></JFXButton>
+            <JFXButton prefHeight="40.0" prefWidth="200.0" text="Escena 5">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="50.0" left="40.0" top="10.0" />
+               </VBox.margin></JFXButton>
+            <JFXButton prefHeight="40.0" prefWidth="200.0" text="Escena 6" textOverrun="CLIP">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="50.0" left="40.0" top="10.0" />
+               </VBox.margin></JFXButton>
+            <JFXButton prefHeight="40.0" prefWidth="200.0" text="Escena 7" textOverrun="CLIP">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="50.0" left="40.0" top="10.0" />
+               </VBox.margin></JFXButton>
          </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
       </VBox>
-      <HBox layoutX="240.0" prefHeight="100.0" prefWidth="1031.0" style="-fx-background-color: rgb(5, 0, 54);" />
-      <Pane fx:id="mainPane" layoutX="239.0" layoutY="100.0" prefHeight="620.0" prefWidth="1031.0" />
+      <Pane fx:id="mainPane" layoutX="240.0" prefHeight="720.0" prefWidth="1031.0" />
    </children>
 </AnchorPane>

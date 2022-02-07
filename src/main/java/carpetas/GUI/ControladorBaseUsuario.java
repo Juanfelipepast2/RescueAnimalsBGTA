@@ -26,13 +26,15 @@ public class ControladorBaseUsuario {
     @FXML
     void pressBoton1(ActionEvent event) {
         CargadorFXML obj = new CargadorFXML();        
-        mainPane.getChildren().setAll(obj.getPane("imageTest"));
+        mainPane.getChildren().setAll(obj.getPane("Vista Fundación"));
+        //Boton1.setStyle("-fx-background-color : rgb(9, 0, 90)");
         
     }
 
     @FXML
     void pressBoton2(ActionEvent event) {
-
+        CargadorFXML obj = new CargadorFXML();        
+        mainPane.getChildren().setAll(obj.getPane("imageTest"));
     }
 
     @FXML
@@ -40,4 +42,10 @@ public class ControladorBaseUsuario {
 
     }
 
+
+    void currentScene(String vista){
+        if (vista.equals("XD")){
+
+        }
+    }
 }

@@ -1,24 +1,37 @@
-#caja{
-    -fx-background-color : rgb(5, 0, 54);
-        background-color: rgb(5, 0, 54);
+#caja {
+  -fx-background-color: rgb(5, 0, 54);
+  background-color: rgb(5, 0, 54);
+}
 
+.ventanaElegida {
+  -fx-background-color: rgb(0, 124, 240);
+  background-color: rgb(0, 124, 240);
+}
+
+.swap {
+  -fx-background-color: rgb(0, 124, 240);
+  background-color: rgb(0, 124, 240);
+  -fx-border-style: "solid";
+  border-style: "solid";
 }
 
 .button {
-    -fx-opacity : 1;
-        opacity : 1;
-    color: antiquewhite;    
-    -fx-border-style :"solid";
-        border-style: "solid";
-    -fx-border-radius : 0px;
-        border-radius : 0px;
-    -fx-text-fill : white;
+    
+  -fx-background-radius: 30 0 0 30;
+  -fx-border-radius: 30 0 0 30;
+  
+  -fx-text-fill: white;
+  
+  -fx-background-color: rgb(5, 0, 54);
+  background-color: rgb(5, 0, 54);
+  -fx-border-color: rgb(5, 0, 54);;
+  border-color: rgb(5, 0, 54);
+  
 }
 
-
-.button:hover{
-    -fx-background-color : rgb(9, 0, 90);
-        background-color : rgb(9, 0, 90);
-
-    
+.button:hover {
+  -fx-background-color: rgb(0, 124, 240);
+  background-color: rgb(0, 124, 240);
+  -fx-border-color: rgb(0, 124, 240);
+  border-color: rgb(0, 124, 240);
 }

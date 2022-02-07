@@ -19,8 +19,7 @@ public class CargadorFXML {
         
         try{
             String link = "/carpetas/view/" + pantalla + ".fxml";
-            URL url = getClass().getResource(link);
-            System.out.println("link");
+            URL url = getClass().getResource(link);            
             if(url == null){
                 throw new FileNotFoundException("El archivo FXML no existe");
             } else {

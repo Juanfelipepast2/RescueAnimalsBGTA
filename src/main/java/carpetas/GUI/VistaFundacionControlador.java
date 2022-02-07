@@ -12,7 +12,7 @@ import javafx.stage.FileChooser;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.InputStream;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
@@ -74,7 +74,6 @@ public class VistaFundacionControlador {
             conn.close();
 
         } catch (Exception e) {
-            // TODO: handle exception
             System.out.println("no" + e);
         }
 
@@ -88,7 +87,6 @@ public class VistaFundacionControlador {
             File archivoSeleccionado = fc.showOpenDialog(null);
             System.out.println(archivoSeleccionado);
             archivoSeleccionado.getAbsolutePath();
-            int numrows = 0;
 
             FileInputStream fis = null;
 
