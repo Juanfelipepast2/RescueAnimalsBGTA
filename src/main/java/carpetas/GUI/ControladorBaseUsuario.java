@@ -22,6 +22,11 @@ public class ControladorBaseUsuario {
     @FXML
     private Pane mainPane;
 
+
+    @FXML
+    void initialize(){
+    }
+
     
     @FXML
     void pressBoton1(ActionEvent event) {
