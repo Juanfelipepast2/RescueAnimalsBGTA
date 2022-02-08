@@ -2,14 +2,16 @@ package carpetas.clases;
 public class Fundacion{
 
   private int ID_Fundacion;
+  private int ID_Localidad;
   private String Nombre_Fun;
   private String Direccion;
   private String Correo_Electronico_Fun;
   private String Contrasena_Fun;
   private int Telefono_Fun;
 
-  public Fundacion(int _ID_Fundacion,String _Nombre_Fun,String _Direccion,String _Correo_Electronico_Fun,String _Contrasena_Fun,int _Telefono_Fun){
+  public Fundacion(int _ID_Fundacion,int _ID_Localidad, String _Nombre_Fun,String _Direccion,String _Correo_Electronico_Fun,String _Contrasena_Fun,int _Telefono_Fun){
     this.ID_Fundacion = _ID_Fundacion;
+    this.ID_Localidad = _ID_Fundacion;
     this.Nombre_Fun = _Nombre_Fun;
     this.Direccion = _Direccion;
     this.Correo_Electronico_Fun =_Correo_Electronico_Fun;
@@ -17,11 +19,23 @@ public class Fundacion{
     this.Telefono_Fun = _Telefono_Fun;
   }
 
+  public Fundacion(){}
+
   public int getID(){
     return this.ID_Fundacion;
   }
   public void setID(int _ID_Fundacion){
     this.ID_Fundacion = _ID_Fundacion;
+  }
+
+  
+
+  public int getID_Localidad() {
+    return ID_Localidad;
+  }
+
+  public void setID_Localidad(int iD_Localidad) {
+    ID_Localidad = iD_Localidad;
   }
 
   public String getNombre_Fun(){
@@ -58,4 +72,5 @@ public class Fundacion{
   public void setTelefono_Fun(int _Telefono_Fun){
     this.Telefono_Fun = _Telefono_Fun;
   }
+
 }

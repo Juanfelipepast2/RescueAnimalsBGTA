@@ -28,14 +28,14 @@ public class CRUD {
             e.printStackTrace();
         }
     }
-    public static Usuario leerUsuario(String Nickname) {
+    public static Usuario leerUsuario(String correo) {
         //Leer usuario
         Usuario Usuario = null;
         try {
             Connection conexion = Conexion.getConnection();
-            String sql = "SELECT * FROM USUARIO WHERE Nickname = ?";
+            String sql = "SELECT * FROM USUARIO WHERE Correo_Electronico_Usu = ?";
             PreparedStatement ps = conexion.prepareStatement(sql);
-            ps.setString(1, Nickname);
+            ps.setString(1, correo);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Usuario = new Usuario();
@@ -50,9 +50,39 @@ public class CRUD {
             }
             conexion.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            /*e.printStackTrace()*/System.out.println("el correo no es usado por un usuario");
+            
         }   return Usuario;
     }
+
+    public static Fundacion leerFundacion(String correo) {
+        //Leer usuario
+        Fundacion fundacion = null;
+        try {
+            Connection conexion = Conexion.getConnection();
+            String sql = "SELECT * FROM FUNDACION WHERE Correo_Electronico_Fun = ?";
+            PreparedStatement ps = conexion.prepareStatement(sql);
+            ps.setString(1, correo);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                fundacion = new Fundacion();
+                fundacion.setID(rs.getInt("ID_Fund"));
+                fundacion.setID_Localidad(rs.getInt("ID_Localidad"));
+                fundacion.setNombre_Fun(rs.getString("Nombre_Fun"));
+                fundacion.setDireccion(rs.getString("Direccion"));
+                fundacion.setCorreo_Electronico_Fun(rs.getString("Correo_Electronico_Fun"));
+                fundacion.setContrasena_Fun(rs.getString("Contrasena_Fun"));
+                fundacion.setTelefono_Fun(rs.getInt("Telefono_Fun"));
+                
+                //Usuario.setFoto(rs.getBinaryStream("FOTO_PERFIL"));
+            }
+            conexion.close();
+        } catch (SQLException e) {
+            /*e.printStackTrace()*/System.out.println("el correo no es usado por una fundacion");
+        }   return fundacion;
+    }
+
+
 
     
 }
