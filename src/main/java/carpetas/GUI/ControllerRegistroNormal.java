@@ -5,7 +5,6 @@ import carpetas.sql_clases.CRUD;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -19,10 +18,19 @@ public class ControllerRegistroNormal {
     private Button BtnVolver;
 
     @FXML
+    private TextField TextApellidos;
+
+    @FXML
+    private TextField TextCedula;
+
+    @FXML
     private PasswordField TextClave;
 
     @FXML
     private TextField TextCorreo;
+
+    @FXML
+    private TextField TextNombres;
 
     @FXML
     private PasswordField TextRepetirClave;
@@ -33,8 +41,6 @@ public class ControllerRegistroNormal {
     @FXML
     private TextField TextUsuario;
 
-    @FXML
-    private TextField TextCedula;
 
     @FXML
     void CrearCuentaClic(ActionEvent event) {
@@ -43,7 +49,7 @@ public class ControllerRegistroNormal {
         int Telefono = Integer.parseInt(TextTelefono.getText());
         if (CRUD.leerUsuario(TextUsuario.getText()) == null) {
             if (TextClave.getText().equals(TextRepetirClave.getText())) {
-                Usuario temp = new Usuario(Cedula, TextUsuario.getText(), TextClave.getText(), TextCorreo.getText(), Telefono);
+                Usuario temp = new Usuario(Cedula, TextUsuario.getText(), TextNombres.getText(), TextApellidos.getText(), TextClave.getText(), TextCorreo.getText(), Telefono);
                 CRUD.crearUsuario(temp);
                 System.out.println("Cuenta creada");
             } else {
