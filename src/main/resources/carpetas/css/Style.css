@@ -4,7 +4,7 @@
 }
 
 .ventanaElegida {
-  -fx-background-color: rgb(229, 211, 188);
+  -fx-background-color: rgb(255, 234, 206);
   background-color: rgb(229, 211, 188);
 }
 
@@ -18,7 +18,7 @@
   -fx-background-radius: 30 30 30 30;
   -fx-border-radius: 30 30 30 30;
   
-  -fx-text-fill: white;
+  -fx-text-fill: rgb(255, 255, 255);
   
   -fx-background-color: rgb(5, 133, 87);
   background-color: rgb(5, 133, 87);
@@ -37,7 +37,27 @@
 #botonAgregarAnimal{
 }
 
+.adoptarAnimal{
+  -fx-background-color: rgb(207, 191, 169);
+  background-color: rgb(5, 133, 87);
+}
+
+#panelBusqueda{
+  -fx-background-color: rgb(255, 255, 255);
+  -fx-background-radius: 30 30 30 30;
+}
+
+.barraBusqueda{
+  -fx-background-color: rgba(255, 255, 255, 0);
+}
+
+#panelAnimalSeleccionado{
+  -fx-background-radius: 30 30 30 30;
+  -fx-background-color: rgb(255, 255, 255);
+}
+
 
 /* 5, 133, 87
 /* 229, 211, 188
 /* 5, 110, 72
+/* 255, 234, 206

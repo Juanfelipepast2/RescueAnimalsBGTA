@@ -39,7 +39,8 @@ public class ControladorBaseUsuario {
 
     @FXML
     void pressBoton3(ActionEvent event) {
-
+        CargadorFXML obj = new CargadorFXML();
+        mainPane.getChildren().setAll(obj.getPane("VistaAdopcion"));
     }
 
 

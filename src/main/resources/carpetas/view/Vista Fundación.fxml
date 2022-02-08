@@ -60,11 +60,11 @@
                </font></TextField>
             <TextField fx:id="textoRazaAnimal" layoutX="40.0" layoutY="370.0" prefHeight="44.0" prefWidth="562.0" promptText="Raza" styleClass="cajaTexto">
                <font>
-                  <Font size="20.0" />
+                  <Font name="Britannic Bold" size="20.0" />
                </font></TextField>
             <TextField fx:id="textoNombreAnimal" layoutX="40.0" layoutY="240.0" prefHeight="44.0" prefWidth="562.0" promptText="Nombre" styleClass="cajaTexto">
                <font>
-                  <Font size="20.0" />
+                  <Font name="Britannic Bold" size="20.0" />
                </font></TextField>
             <Label alignment="CENTER" layoutX="40.0" layoutY="200.0" prefHeight="27.0" prefWidth="332.0" style="&#10;" text="Ingrese el nombre del animal:">
                <font>
@@ -89,7 +89,10 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </Label>
-            <Button fx:id="botonImagen" layoutX="741.0" layoutY="509.0" mnemonicParsing="false" onAction="#InsertarFoto" text="Seleccionar una imágen" />
+            <Button fx:id="botonImagen" layoutX="723.0" layoutY="508.0" mnemonicParsing="false" onAction="#InsertarFoto" prefHeight="28.0" prefWidth="181.0" text="Seleccionar una imágen">
+               <font>
+                  <Font name="Britannic Bold" size="14.0" />
+               </font></Button>
             <Label alignment="CENTER" layoutX="687.0" layoutY="461.0" prefHeight="27.0" prefWidth="252.0" style="&#10;" text="Inserte una imágen del animal">
                <font>
                   <Font name="Britannic Bold" size="18.0" fx:id="x1111" />
