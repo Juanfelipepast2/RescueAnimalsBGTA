@@ -21,7 +21,7 @@ public class CRUD {
             ps.setString(5, Usuario.getCorreo());
             ps.setString(6, Usuario.getContraseña());
             ps.setInt(7, Usuario.getNumeroTelefonico());
-            //ps.setBytes(8, Usuario.getFoto());
+            ps.setBytes(8, null);
             ps.execute();
             conexion.close();
         } catch (SQLException e) {

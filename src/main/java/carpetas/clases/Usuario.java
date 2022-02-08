@@ -10,7 +10,7 @@ public class Usuario{
     String contraseña;
     String correo;
     int numeroTelefonico;
-    InputStream foto;
+    byte[] foto;
     public Usuario(int cedula, String username, String nombre, String apellido, String contraseña, String correo,
             int numeroTelefonico) {
         this.cedula = cedula;
@@ -65,11 +65,11 @@ public class Usuario{
     public void setNumeroTelefonico(int numeroTelefonico) {
         this.numeroTelefonico = numeroTelefonico;
     }
-    //public void setFoto(byte[] foto) {
-     //   this.foto = foto;
-    //}
-    //public byte[] getFoto() {
-        //return foto;
-    //}
+    public void setFoto(byte[] foto) {
+       this.foto = foto;
+    }
+    public byte[] getFoto() {
+        return foto;
+    }
 
 }

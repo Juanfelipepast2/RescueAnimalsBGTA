@@ -47,17 +47,16 @@ public class ControllerRegistroNormal {
         //Crear cuenta revisando que el correo no exista en la base de datos
         int Cedula = Integer.parseInt(TextCedula.getText());
         int Telefono = Integer.parseInt(TextTelefono.getText());
-        if (CRUD.leerUsuario(TextUsuario.getText()) == null) {
-            if (TextClave.getText().equals(TextRepetirClave.getText())) {
-                Usuario temp = new Usuario(Cedula, TextUsuario.getText(), TextNombres.getText(), TextApellidos.getText(), TextClave.getText(), TextCorreo.getText(), Telefono);
+        Usuario temp = new Usuario(Cedula, TextUsuario.getText(), TextNombres.getText(), TextApellidos.getText(), TextClave.getText(), TextCorreo.getText(), Telefono);
+        if (TextClave.getText().equals(TextRepetirClave.getText())) {
                 CRUD.crearUsuario(temp);
                 System.out.println("Cuenta creada");
             } else {
                 System.out.println("Las contraseñas no coinciden");
             }
-        } else {
-            System.out.println("El usuario ya existe");
-        }
+        // } else {
+        //     System.out.println("El usuario ya existe");
+        //}
     }
 
 }
