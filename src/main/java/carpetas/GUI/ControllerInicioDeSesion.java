@@ -1,7 +1,10 @@
 package carpetas.GUI;
 
+import carpetas.clases.*;
 import carpetas.clases.Usuario;
 import carpetas.sql_clases.CRUD;
+
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -31,19 +34,28 @@ public class ControllerInicioDeSesion {
 
     @FXML
     void IniciarSesionClic(ActionEvent event) {
-        Usuario temp = CRUD.leerUsuario(TextUsuario.getText());
-        if (temp != null) {
-            if (temp.getContraseña().equals(TextClave2.getText())) {
-                System.out.println("Bienvenido");
-                System.out.println(temp.getUsername());
-                System.out.println(temp.getContraseña());
-            } else {
-                System.out.println("Usuario o contraseña incorrectos");
-            }
-        } else {
-            System.out.println("Usuario o contraseña no existen");
-        }        
+        Usuario tempUser = CRUD.leerUsuario(TextUsuario.getText());
+        Fundacion tempFund = CRUD.leerFundacion(TextUsuario.getText());
+        if (tempUser != null) {
+            passCheck(tempUser.getContraseña());
+            return;
+        } else  if(tempFund != null){
+            passCheck(tempFund.getContrasena_Fun());
+            return;
+        }  else {
+            System.out.println("No existe un usuario o fundación con ese correo");
+        }   
     }
+
+    void passCheck(String pass){
+        if(pass.equals(TextClave.getText()) || pass.equals(TextClave2.getText())){
+            System.out.println("Bienvenido");
+        } else {
+            System.out.println("Usuario o contraseña incorrectos");
+        }
+    }
+
+
 
     @FXML
     void mostrarContrasena(ActionEvent event) {
