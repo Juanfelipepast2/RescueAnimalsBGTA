@@ -85,22 +85,24 @@ public class CRUD {
     public static ArrayList<Animal> LeerAnimales(){
         Connection conn = Conexion.getConnection();
         ArrayList<Animal> animales = new ArrayList<>();
-        String sql = "SELECT * FROM ANIMAL";
+        String sql = "SELECT ID_Animal, ANIMAL.ID_Fund, Nombre_Ani, Tipo, Raza, FOTO_ANIMAL, Nombre_Fun FROM ANIMAL, FUNDACION WHERE ANIMAL.ID_Fund == FUNDACION.ID_Fund";
         try{
             Statement sm = conn.createStatement();
             ResultSet rs = sm.executeQuery(sql);
             while(rs.next()){
                 Animal animal = new Animal();
-                animal.setID_Animal(rs.getInt(1));
-                animal.setID_Fund(rs.getInt(2));
-                animal.setNombre_Animal(rs.getString(4));
-                animal.setTipo_Animal(rs.getString(5));
-                animal.setRaza_Animal(rs.getString(6));
+                animal.setID_Animal(rs.getInt("ID_Animal"));
+                animal.setID_Fund(rs.getInt("ID_Fund"));
+                animal.setNombre_Animal(rs.getString("Nombre_Ani"));
+                animal.setTipo_Animal(rs.getString("Tipo"));
+                animal.setRaza_Animal(rs.getString("Raza"));
+                animal.setNombre_Fund(rs.getString("Nombre_Fun"));
                 animales.add(animal);
             }
             conn.close();
         }catch (SQLException e){
             System.out.println(e.getMessage());
+            //e.printStackTrace();
         }
         return animales;
     }
