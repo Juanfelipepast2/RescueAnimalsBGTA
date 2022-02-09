@@ -71,6 +71,9 @@
   -fx-background-radius: 30 30 30 30;
 }
 
+#botonAnimal:hover{
+  -fx-background: rgb(211, 211, 211);
+}
 
 
 /* 5, 133, 87
