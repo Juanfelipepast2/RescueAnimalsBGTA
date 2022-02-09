@@ -34,6 +34,7 @@
 
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -42,9 +43,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox minWidth="550.0" prefHeight="150.0" prefWidth="550.0" style="-fx-background-color: white;" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carpetas.GUI.ControladorAnimalItem">
+<VBox minWidth="550.0" onMousePressed="#click" prefHeight="150.0" prefWidth="550.0" style="-fx-background-color: white;" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carpetas.GUI.ControladorAnimalItem">
    <children>
-      <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="sombra" stylesheets="@../css/Style.css" VBox.vgrow="ALWAYS">
+      <BorderPane prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/Style.css" VBox.vgrow="ALWAYS">
          <right>
             <ImageView fx:id="fotoAnimalItem" fitHeight="150.0" fitWidth="162.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                <image>
@@ -110,10 +111,17 @@
                </children>
             </VBox>
          </left>
+         <styleClass>
+            <String fx:value="sombra" />
+            <String fx:value="animal" />
+         </styleClass>
       </BorderPane>
    </children>
    <styleClass>
       <String fx:value="animal" />
       <String fx:value="sombra" />
    </styleClass>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
 </VBox>

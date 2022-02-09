@@ -1,23 +1,27 @@
 package carpetas.GUI;
 
+import java.io.ByteArrayInputStream;
+
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 import carpetas.clases.Animal;
 import carpetas.sql_clases.CRUD;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
-public class ControladorAdoptarAnimal {
+public class ControladorAdoptarAnimal implements Initializable{
     @FXML
     private Button botonAdoptarPanel;
 
@@ -48,13 +52,38 @@ public class ControladorAdoptarAnimal {
     @FXML
     private GridPane grid;
 
-
-    private ArrayList<ControladorAnimalItem> listaTarjeta;
-    private ArrayList<Animal> listaAnimales;
     
-    @FXML
-    public void initialize(){
+    private ArrayList<Animal> listaAnimales;
+    private MyListener myListener;
+
+    private void elegirAnimal(Animal animal){
+        try{
+        nombreAnimalPanel.setText(animal.getNombre_Animal());
+        tipoAnimalPanel.setText(animal.getTipo_Animal());
+        razaAnimalPanel.setText(animal.getRaza_Animal());
+        fundacionAnimalPanel.setText(animal.getNombre_Fund());              
+        ByteArrayInputStream bin = animal.getFotoMostrable();
+        fotoAnimalPanel.setImage(new Image(bin));
+        
+        bin.reset();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void initialize(URL Location, ResourceBundle resources){
         getData();
+
+        if(listaAnimales.size() > 0) {
+            //elegirAnimal(listaAnimales.get(0));
+            myListener = new MyListener() {
+                @Override
+                public void onClickListener(Animal animal) {
+                    elegirAnimal(animal);
+                }   
+            };
+        }
 
         int columna = 0;
         int fila = 0;
@@ -67,7 +96,7 @@ public class ControladorAdoptarAnimal {
                 VBox vbox = fxmlLoader.load();
 
                 ControladorAnimalItem item = fxmlLoader.getController();
-                item.initAnimal(listaAnimales.get(i));
+                item.initAnimal(listaAnimales.get(i), myListener);
 
                 grid.add(vbox, columna, fila++);
 
@@ -75,8 +104,8 @@ public class ControladorAdoptarAnimal {
             }
 
         }catch(Exception e){
-            //System.out.println(e.getMessage());
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            //e.printStackTrace();
         }
     }
 

@@ -176,30 +176,30 @@
                                     </ImageView>
                                  </children>
                               </HBox>
-                              <HBox alignment="CENTER" prefHeight="30.0" prefWidth="268.0" styleClass="sombra" stylesheets="@../css/Style.css" VBox.vgrow="ALWAYS">
+                              <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="268.0" styleClass="sombra" stylesheets="@../css/Style.css" VBox.vgrow="ALWAYS">
                                  <children>
-                                    <Label alignment="CENTER" prefHeight="18.0" prefWidth="60.0" text="TIPO:" HBox.hgrow="ALWAYS">
+                                    <Label alignment="CENTER" prefHeight="18.0" prefWidth="87.0" text="TIPO:" HBox.hgrow="ALWAYS">
                                        <font>
                                           <Font name="Britannic Bold" size="17.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="tipoAnimalPanel" alignment="CENTER" prefHeight="17.0" prefWidth="60.0" text="Tipo" textFill="#00000080" />
+                                    <Label fx:id="tipoAnimalPanel" alignment="CENTER" prefHeight="17.0" prefWidth="32.0" text="Tipo" />
                                     <Label alignment="CENTER" prefWidth="60.0" text="RAZA:" HBox.hgrow="ALWAYS">
                                        <font>
                                           <Font name="Britannic Bold" size="17.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="razaAnimalPanel" alignment="CENTER" prefWidth="60.0" text="Raza" textFill="#0000007f" />
+                                    <Label fx:id="razaAnimalPanel" alignment="CENTER" prefWidth="60.0" text="Raza" />
                                  </children>
                               </HBox>
-                              <HBox alignment="CENTER" prefHeight="32.0" prefWidth="268.0" styleClass="sombra" stylesheets="@../css/Style.css" VBox.vgrow="ALWAYS">
+                              <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="268.0" styleClass="sombra" stylesheets="@../css/Style.css" VBox.vgrow="ALWAYS">
                                  <children>
-                                    <Label alignment="CENTER" prefHeight="18.0" prefWidth="98.0" text="FUNDACIÓN:" HBox.hgrow="ALWAYS">
+                                    <Label alignment="CENTER" prefHeight="18.0" prefWidth="137.0" text="FUNDACIÓN:" HBox.hgrow="ALWAYS">
                                        <font>
                                           <Font name="Britannic Bold" size="17.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="fundacionAnimalPanel" alignment="CENTER" prefHeight="17.0" prefWidth="60.0" text="Fundacion" textFill="#00000080" />
+                                    <Label fx:id="fundacionAnimalPanel" alignment="CENTER" prefHeight="17.0" prefWidth="60.0" text="Fundacion" />
                                  </children>
                               </HBox>
                            </children>

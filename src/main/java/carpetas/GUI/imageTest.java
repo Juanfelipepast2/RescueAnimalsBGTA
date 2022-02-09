@@ -1,5 +1,6 @@
 package carpetas.GUI;
 
+import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -26,13 +27,14 @@ public class imageTest {
 
         //AHORA MISMO NO FUNCIONA DEBIDO A QUE NO HAY IMAGENES ALMACENADAS EN LA DB MOMENTANEAMENTE
         try {
-            String query = "SELECT imagen FROM imagenUsuario WHERE id = 2";
+            String query = "SELECT FOTO_ANIMAL FROM ANIMAL WHERE ID_Animal = 2";
             Connection conn = Conexion.getConnection();
             PreparedStatement ps = conn.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
-            InputStream is = rs.getBinaryStream("imagen");
+            ByteArrayInputStream is = new ByteArrayInputStream(rs.getBytes("FOTO_ANIMAL"));
             
             img.setImage(new Image(is));
+            
         } catch (Exception e) {
             System.out.println(e + " XD");
         }

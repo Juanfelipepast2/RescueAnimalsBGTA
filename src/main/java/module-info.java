@@ -7,4 +7,5 @@ module carpetas {
 
     opens carpetas.GUI to javafx.fxml;
     exports carpetas.GUI;
+    exports carpetas.clases;
 }
