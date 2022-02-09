@@ -16,11 +16,13 @@ import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
+import carpetas.clases.Animal;
 import carpetas.sql_clases.Conexion;
 
 public class VistaFundacionControlador {
 
     private ByteArrayOutputStream imagen;
+    private Animal animal;
 
     @FXML
     private Button botonAgregarAnimal;

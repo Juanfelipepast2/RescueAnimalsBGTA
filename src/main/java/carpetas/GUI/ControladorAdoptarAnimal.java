@@ -1,5 +1,7 @@
 package carpetas.GUI;
 
+import java.io.ByteArrayInputStream;
+
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -13,11 +15,10 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 public class ControladorAdoptarAnimal implements Initializable{
@@ -51,15 +52,23 @@ public class ControladorAdoptarAnimal implements Initializable{
     @FXML
     private GridPane grid;
 
-
+    
     private ArrayList<Animal> listaAnimales;
     private MyListener myListener;
 
     private void elegirAnimal(Animal animal){
+        try{
         nombreAnimalPanel.setText(animal.getNombre_Animal());
         tipoAnimalPanel.setText(animal.getTipo_Animal());
         razaAnimalPanel.setText(animal.getRaza_Animal());
-        fundacionAnimalPanel.setText(animal.getNombre_Fund());
+        fundacionAnimalPanel.setText(animal.getNombre_Fund());              
+        ByteArrayInputStream bin = animal.getFotoMostrable();
+        fotoAnimalPanel.setImage(new Image(bin));
+        
+        bin.reset();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -67,7 +76,7 @@ public class ControladorAdoptarAnimal implements Initializable{
         getData();
 
         if(listaAnimales.size() > 0) {
-            elegirAnimal(listaAnimales.get(0));
+            //elegirAnimal(listaAnimales.get(0));
             myListener = new MyListener() {
                 @Override
                 public void onClickListener(Animal animal) {

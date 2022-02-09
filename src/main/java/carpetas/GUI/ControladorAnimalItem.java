@@ -1,8 +1,9 @@
 package carpetas.GUI;
 
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import carpetas.clases.Animal;
@@ -39,5 +40,6 @@ public class ControladorAnimalItem {
         fundacionAnimalItem.setText("Fundacion: " + obj.getNombre_Fund());
         razaAnimalItem.setText("Raza: " + obj.getRaza_Animal());
         tipoAnimalItem.setText("Tipo: " + obj.getTipo_Animal());
+        fotoAnimalItem.setImage(new Image(obj.getFotoMostrable()));
     }
 }

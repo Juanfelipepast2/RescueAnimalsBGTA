@@ -150,6 +150,7 @@ public class CRUD {
                 animal.setTipo_Animal(rs.getString("Tipo"));
                 animal.setRaza_Animal(rs.getString("Raza"));
                 animal.setNombre_Fund(rs.getString("Nombre_Fun"));
+                animal.setFotoMostrable(rs.getBytes("FOTO_ANIMAL"));
                 animales.add(animal);
             }
             conn.close();
