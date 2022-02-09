@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carpetas.GUI.ControladorBaseUsuario">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carpetas.GUI.ControladorBaseFundacion">
    <children>
       <VBox id="caja" prefHeight="720.0" prefWidth="240.0" stylesheets="@../css/Style.css">
          <children>
-            <JFXButton fx:id="btnPerfil" alignment="BASELINE_LEFT" maxHeight="60.0" minHeight="60.0" onAction="#verPerfil" prefHeight="60.0" prefWidth="200.0" styleClass="boton" text="PERFIL">
+            <JFXButton fx:id="btnFundacion" alignment="BASELINE_LEFT" maxHeight="60.0" minHeight="60.0" onAction="#verFundacion" prefHeight="60.0" prefWidth="200.0" styleClass="boton" text="FUNDACION">
                <font>
                   <Font size="19.0" />
                </font>
@@ -24,11 +24,11 @@
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../Img/usuario.png" />
+                        <Image url="@../../Img/security_pass_64px.png" />
                      </image>
                   </ImageView>
                </graphic></JFXButton>
-            <JFXButton fx:id="btnAnimalesAdoptados" alignment="BASELINE_LEFT" maxHeight="60.0" minHeight="60.0" onAction="#verAnimalesAdoptados" prefHeight="60.0" prefWidth="200.0" styleClass="boton" text="ANIMALES">
+            <JFXButton fx:id="btnAnimalesFundacion" alignment="BASELINE_LEFT" maxHeight="60.0" minHeight="60.0" onAction="#verAnimalesFundacion" prefHeight="60.0" prefWidth="200.0" styleClass="boton" text="ANIMALES">
                <font>
                   <Font size="19.0" />
                </font>
@@ -39,20 +39,6 @@
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../Img/dog_paw_32px.png" />
-                     </image>
-                  </ImageView>
-               </graphic></JFXButton>
-            <JFXButton fx:id="btnAdoptar" alignment="BASELINE_LEFT" maxHeight="60.0" minHeight="60.0" onAction="#verAdoptar" prefHeight="40.0" prefWidth="200.0" styleClass="boton" text="ADOPTA">
-               <font>
-                  <Font size="19.0" />
-               </font>
-               <VBox.margin>
-                  <Insets bottom="20.0" left="20.0" top="10.0" />
-               </VBox.margin>
-               <graphic>
-                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../Img/heart_32px.png" />
                      </image>
                   </ImageView>
                </graphic></JFXButton>

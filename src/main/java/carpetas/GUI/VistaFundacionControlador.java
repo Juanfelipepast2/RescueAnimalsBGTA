@@ -17,12 +17,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import carpetas.clases.Animal;
+import carpetas.clases.Fundacion;
 import carpetas.sql_clases.Conexion;
 
 public class VistaFundacionControlador {
 
     private ByteArrayOutputStream imagen;
     private Animal animal;
+    private Fundacion fnd;
 
     @FXML
     private Button botonAgregarAnimal;
@@ -65,7 +67,7 @@ public class VistaFundacionControlador {
         try {
             PreparedStatement ps = conn.prepareStatement(consulta);
 
-            ps.setInt(1, 21);
+            ps.setInt(1, fnd.getID());
             ps.setString(2, textoNombreAnimal.getText());
             ps.setString(3, textoTipoAnimal.getText());
             ps.setString(4, textoRazaAnimal.getText());
@@ -76,7 +78,8 @@ public class VistaFundacionControlador {
             conn.close();
 
         } catch (Exception e) {
-            System.out.println("no" + e);
+            //System.out.println("no ");
+            e.printStackTrace();
         }
 
     }
@@ -112,4 +115,10 @@ public class VistaFundacionControlador {
 
     }
 
+
+    void setFund(Fundacion fnd){
+        this.fnd = fnd;
+        System.out.println(this.fnd.getNombre_Fun());
+    }
+     
 }

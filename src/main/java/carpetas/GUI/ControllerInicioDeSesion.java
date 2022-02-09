@@ -1,16 +1,22 @@
 package carpetas.GUI;
 
+import java.io.IOException;
+
 import carpetas.clases.*;
 import carpetas.clases.Usuario;
 import carpetas.sql_clases.CRUD;
 
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class ControllerInicioDeSesion {
 
@@ -32,43 +38,78 @@ public class ControllerInicioDeSesion {
     @FXML
     private TextField TextUsuario;
 
+    private Stage stage;
+    
+    
+
     @FXML
-    void IniciarSesionClic(ActionEvent event) {
+    void IniciarSesionClic(ActionEvent event) throws IOException {
         Usuario tempUser = CRUD.leerUsuario(TextUsuario.getText());
         Fundacion tempFund = CRUD.leerCorreoFundacion(TextUsuario.getText());
         if (tempUser != null) {
-            passCheck(tempUser.getContraseña());
-            return;
-        } else  if(tempFund != null){
-            passCheck(tempFund.getContrasena_Fun());
-            return;
-        }  else {
-            System.out.println("No existe un usuario o fundación con ese correo");
-        }   
-    }
 
-    void passCheck(String pass){
-        if(pass.equals(TextClave.getText()) || pass.equals(TextClave2.getText())){
-            System.out.println("Bienvenido");
+            if (passCheck(tempUser.getContraseña())) {
+                cambiarVentana(event, "/carpetas/view/Base_vista_usuario", tempUser, null);
+            }
+            return;
+        } else if (tempFund != null) {
+
+            if (passCheck(tempFund.getContrasena_Fun())) {
+                cambiarVentana(event, "/carpetas/view/Base_vista_fundacion", null, tempFund);
+            }
+            return;
         } else {
-            System.out.println("Usuario o contraseña incorrectos");
+            System.out.println("No existe un usuario o fundación con ese correo");
         }
     }
 
-
+    boolean passCheck(String pass) {
+        if (pass.equals(TextClave.getText()) || pass.equals(TextClave2.getText())) {
+            System.out.println("Bienvenido");
+            return true;
+        } else {
+            System.out.println("Usuario o contraseña incorrectos");
+            return false;
+        }
+    }
 
     @FXML
     void mostrarContrasena(ActionEvent event) {
-        if(CheckBoxClave.isSelected()){
+        if (CheckBoxClave.isSelected()) {
             TextClave.setText(TextClave2.getText());
             TextClave2.setVisible(false);
             TextClave.setVisible(true);
             return;
-        } 
-            TextClave2.setText(TextClave2.getText());
-            TextClave.setVisible(false);
-            TextClave2.setVisible(true);
-        
+        }
+        TextClave2.setText(TextClave2.getText());
+        TextClave.setVisible(false);
+        TextClave2.setVisible(true);
+
+    }
+
+    void cambiarVentana(ActionEvent event, String view, Usuario usr, Fundacion fnd) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(view + ".fxml"));
+        Parent root;
+        root = loader.load();
+        if (usr != null) {
+            ControladorBaseUsuario controlUser = new ControladorBaseUsuario();
+            
+            
+            controlUser = loader.getController();
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);            
+            controlUser.setUser(usr);
+            
+        } else if (fnd != null){
+            ControladorBaseFundacion controlFun = new ControladorBaseFundacion();            
+            controlFun = loader.getController();
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);            
+            controlFun.setFundacion(fnd);
+        }
+        stage.show();
     }
 
 }

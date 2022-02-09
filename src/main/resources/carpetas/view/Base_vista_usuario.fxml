@@ -3,6 +3,8 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
@@ -12,55 +14,62 @@
    <children>
       <VBox id="caja" prefHeight="720.0" prefWidth="240.0" stylesheets="@../css/Style.css">
          <children>
-            <JFXButton id="sceneButton" fx:id="Boton1" onAction="#pressBoton1" prefHeight="60.0" prefWidth="200.0" text="Escena 1">
+            <JFXButton fx:id="btnPerfil" alignment="BASELINE_LEFT" maxHeight="60.0" minHeight="60.0" onAction="#verPerfil" prefHeight="60.0" prefWidth="200.0" styleClass="boton" text="PERFIL">
                <font>
                   <Font size="19.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="50.0" left="40.0" top="10.0" />
-               </VBox.margin></JFXButton>
-            <JFXButton id="sceneButton" fx:id="boton2" onAction="#pressBoton2" prefHeight="40.0" prefWidth="200.0" text="Escena 2">
+                  <Insets bottom="20.0" left="20.0" top="10.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Img/usuario.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="btnAnimalesAdoptados" alignment="BASELINE_LEFT" maxHeight="60.0" minHeight="60.0" onAction="#verAnimalesAdoptados" prefHeight="60.0" prefWidth="200.0" styleClass="boton" text="ANIMALES">
                <font>
                   <Font size="19.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="50.0" left="40.0" top="10.0" />
-               </VBox.margin></JFXButton>
-            <JFXButton id="sceneButton" fx:id="boton3" onAction="#pressBoton3" prefHeight="40.0" prefWidth="200.0" text="Escena 3">
+                  <Insets bottom="20.0" left="20.0" top="10.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Img/dog_paw_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="btnAdoptar" alignment="BASELINE_LEFT" maxHeight="60.0" minHeight="60.0" onAction="#verAdoptar" prefHeight="40.0" prefWidth="200.0" styleClass="boton" text="ADOPTA">
                <font>
                   <Font size="19.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="50.0" left="40.0" top="10.0" />
-               </VBox.margin></JFXButton>
-            <JFXButton id="sceneButton" prefHeight="40.0" prefWidth="200.0" text="Escena 4">
+                  <Insets bottom="20.0" left="20.0" top="10.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Img/heart_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton fx:id="btnCerrarSesion" alignment="BASELINE_LEFT" maxHeight="60.0" minHeight="60.0" onAction="#cerrarSesion" prefHeight="40.0" prefWidth="200.0" styleClass="boton" text="CERRAR SESION">
                <font>
                   <Font size="19.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="50.0" left="40.0" top="10.0" />
-               </VBox.margin></JFXButton>
-            <JFXButton id="sceneButton" prefHeight="40.0" prefWidth="200.0" text="Escena 5">
-               <font>
-                  <Font size="19.0" />
-               </font>
-               <VBox.margin>
-                  <Insets bottom="50.0" left="40.0" top="10.0" />
-               </VBox.margin></JFXButton>
-            <JFXButton id="sceneButton" prefHeight="40.0" prefWidth="200.0" text="Escena 6" textOverrun="CLIP">
-               <font>
-                  <Font size="19.0" />
-               </font>
-               <VBox.margin>
-                  <Insets bottom="50.0" left="40.0" top="10.0" />
-               </VBox.margin></JFXButton>
-            <JFXButton id="sceneButton" prefHeight="40.0" prefWidth="200.0" text="Escena 7" textOverrun="CLIP">
-               <font>
-                  <Font size="19.0" />
-               </font>
-               <VBox.margin>
-                  <Insets bottom="50.0" left="40.0" top="10.0" />
-               </VBox.margin></JFXButton>
+                  <Insets bottom="20.0" left="20.0" top="10.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Img/door_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
          </children>
          <cursor>
             <Cursor fx:constant="DEFAULT" />

@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 import carpetas.clases.*;
-import carpetas.GUI.ControllerRegistroFundacion;
+
 
 
 
