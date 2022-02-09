@@ -15,7 +15,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="218.0" layoutY="98.0" text="Usuario o ID de fundación:">
+      <Label layoutX="168.0" layoutY="96.0" text="Nombre de usuario o correo de fundación:">
          <font>
             <Font size="14.0" />
          </font>
