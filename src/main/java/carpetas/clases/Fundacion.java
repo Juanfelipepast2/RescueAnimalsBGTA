@@ -11,7 +11,7 @@ public class Fundacion{
 
   public Fundacion(int _ID_Fundacion,int _ID_Localidad, String _Nombre_Fun,String _Direccion,String _Correo_Electronico_Fun,String _Contrasena_Fun,int _Telefono_Fun){
     this.ID_Fundacion = _ID_Fundacion;
-    this.ID_Localidad = _ID_Fundacion;
+    this.ID_Localidad = _ID_Localidad;
     this.Nombre_Fun = _Nombre_Fun;
     this.Direccion = _Direccion;
     this.Correo_Electronico_Fun =_Correo_Electronico_Fun;

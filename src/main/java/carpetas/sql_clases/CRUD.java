@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 import carpetas.clases.*;
+import carpetas.GUI.ControllerRegistroFundacion;
 
 
 
@@ -76,7 +77,7 @@ public class CRUD {
             }
             conexion.close();
         } catch (SQLException e) {
-            /*e.printStackTrace()*/System.out.println("La cedula no es usada por un usuario");
+            /*e.printStackTrace()*/System.out.println("El correo no es usado por un usuario");
             
         }   return Usuario;
     }
@@ -108,7 +109,7 @@ public class CRUD {
         }   return Usuario;
     }
 
-    public static Fundacion leerFundacion(String correo) {
+    public static Fundacion leerCorreoFundacion(String correo) {
         //Leer usuario
         Fundacion fundacion = null;
         try {
@@ -127,12 +128,59 @@ public class CRUD {
                 fundacion.setContrasena_Fun(rs.getString("Contrasena_Fun"));
                 fundacion.setTelefono_Fun(rs.getInt("Telefono_Fun"));
                 
-                //Usuario.setFoto(rs.getBinaryStream("FOTO_PERFIL"));
+                //Usuario.setFoto(rs.getBinaryStream("FOTO_FUNDACION"));
             }
             conexion.close();
         } catch (SQLException e) {
-            /*e.printStackTrace()*/System.out.println("el correo no es usado por una fundacion");
+            /*e.printStackTrace()*/System.out.println("El correo no es usado por una fundación");
         }   return fundacion;
+    }
+
+    public static Fundacion leerID(int ID) {
+        //Leer Cedula
+        Fundacion Fundacion = null;
+        try {
+            Connection conexion = Conexion.getConnection();
+            String sql = "SELECT * FROM FUNDACION WHERE ID_Fund = ?";
+            PreparedStatement ps = conexion.prepareStatement(sql);
+            ps.setInt(1, ID);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Fundacion = new Fundacion();
+                Fundacion.setID(rs.getInt("ID_Fund"));
+                Fundacion.setID_Localidad(rs.getInt("ID_Localidad"));
+                Fundacion.setNombre_Fun(rs.getString("Nombre_Fun"));
+                Fundacion.setDireccion(rs.getString("Direccion"));
+                Fundacion.setCorreo_Electronico_Fun(rs.getString("Correo_Electronico_Fun"));
+                Fundacion.setContrasena_Fun(rs.getString("Contrasena_Fun"));
+                Fundacion.setTelefono_Fun(rs.getInt("Telefono_Fun"));
+                
+                //Usuario.setFoto(rs.getBinaryStream("FOTO_FUNDACION"));
+            }
+            conexion.close();
+        } catch (SQLException e) {
+            /*e.printStackTrace()*/System.out.println("El correo no es usado por una fundación");
+        }   return Fundacion;
+    }
+
+    public static void crearFundacion(Fundacion Fundacion) {
+        try {
+            Connection conexion = Conexion.getConnection();
+            String sql = "INSERT INTO FUNDACION (ID_Fund, ID_Localidad, Nombre_Fun, Direccion, Correo_Electronico_Fun, Contrasena_Fun, Telefono_Fun, FOTO_FUNDACION) VALUES (?,?,?,?,?,?,?,?)";
+            PreparedStatement ps = conexion.prepareStatement(sql);
+            ps.setInt(1, Fundacion.getID());
+            ps.setInt(2, Fundacion.getID_Localidad());
+            ps.setString(3, Fundacion.getNombre_Fun());
+            ps.setString(4, Fundacion.getDireccion());
+            ps.setString(5, Fundacion.getCorreo_Electronico_Fun());
+            ps.setString(6, Fundacion.getContrasena_Fun());
+            ps.setInt(7, Fundacion.getTelefono_Fun());
+            ps.setBytes(8, null);
+            ps.execute();
+            conexion.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public static ArrayList<Animal> LeerAnimales(){
@@ -160,5 +208,4 @@ public class CRUD {
         return animales;
     }
 
-    
 }

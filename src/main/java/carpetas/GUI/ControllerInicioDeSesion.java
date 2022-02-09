@@ -35,7 +35,7 @@ public class ControllerInicioDeSesion {
     @FXML
     void IniciarSesionClic(ActionEvent event) {
         Usuario tempUser = CRUD.leerUsuario(TextUsuario.getText());
-        Fundacion tempFund = CRUD.leerFundacion(TextUsuario.getText());
+        Fundacion tempFund = CRUD.leerCorreoFundacion(TextUsuario.getText());
         if (tempUser != null) {
             passCheck(tempUser.getContraseña());
             return;

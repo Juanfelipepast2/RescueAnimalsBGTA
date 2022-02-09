@@ -4,10 +4,14 @@ import carpetas.clases.Usuario;
 import carpetas.sql_clases.CRUD;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.text.Text;
+import javafx.scene.Scene;
 
 public class ControllerRegistroNormal {
 
@@ -41,6 +45,10 @@ public class ControllerRegistroNormal {
     @FXML
     private TextField TextUsuario;
 
+    @FXML
+    private void Volver(ActionEvent event) {
+        
+    }
 
     @FXML
     void CrearCuentaClic(ActionEvent event) {
@@ -51,20 +59,34 @@ public class ControllerRegistroNormal {
         if (CRUD.leerUsuario(temp.getUsername())==null && CRUD.leerCedula(temp.getCedula())==null && CRUD.leerCorreo(temp.getCorreo())==null) {    
             if (TextClave.getText().equals(TextRepetirClave.getText())) {
                     CRUD.crearUsuario(temp);
-                    System.out.println("Cuenta creada");
+                    AlertaInformacion("Registro", "La cuenta se ha creado correctamente");
                 } else {
-                    System.out.println("Las contraseñas no coinciden");
+                    AlertaError("Registro", "Las contraseñas no coinciden");
                 }
         } else {
             if(CRUD.leerUsuario(TextUsuario.getText())!=null) {
-                System.out.println("El usuario ya existe");
+                AlertaError("Registro", "El nombre de usuario ya esta vinculado a una cuenta");
             }
             else if(CRUD.leerCedula(Cedula)!=null) {
-                System.out.println("La cedula ya existe");
+                AlertaError("Registro", "El numero de cedula ingresado ya esta vinculada a una cuenta");
             }
             else if(CRUD.leerCorreo(TextCorreo.getText())!=null) {
-                System.out.println("El correo ya existe");
+                AlertaError("Registro", "El correo electronico ingresado ya esta vinculado a una cuenta");
             }
         }
+    }
+
+    @FXML
+    void AlertaInformacion(String Titulo, String Mensaje) {
+        Alert AlertaInformacion = new Alert(AlertType.NONE, Mensaje, ButtonType.OK);
+        AlertaInformacion.setTitle(Titulo);
+        AlertaInformacion.showAndWait();
+    }
+
+    @FXML
+    void AlertaError(String Titulo, String Mensaje) {
+        Alert AlertaError = new Alert(AlertType.ERROR, Mensaje, ButtonType.OK);
+        AlertaError.setTitle(Titulo);
+        AlertaError.showAndWait();
     }
 }

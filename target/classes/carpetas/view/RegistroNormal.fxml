@@ -6,12 +6,10 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carpetas.GUI.ControllerRegistroNormal">
    <children>
-      <Pane prefHeight="400.0" prefWidth="600.0" />
       <ScrollPane prefHeight="400.0" prefWidth="600.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="743.0" prefWidth="585.0">
@@ -21,56 +19,56 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="268.0" layoutY="96.0" text="Usuario:">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="258.0" layoutY="163.0" text="Contraseña:">
+                  <Label layoutX="268.0" layoutY="97.0" text="Usuario:">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
                   <TextField fx:id="TextUsuario" layoutX="219.0" layoutY="127.0" />
+                  <Label layoutX="258.0" layoutY="167.0" text="Contraseña:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
                   <PasswordField fx:id="TextClave" layoutX="219.0" layoutY="197.0" />
-                  <Label layoutX="227.0" layoutY="246.0" text="Repite tu contraseña:">
+                  <Label layoutX="227.0" layoutY="237.0" text="Repite tu contraseña:">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <PasswordField fx:id="TextRepetirClave" layoutX="218.0" layoutY="275.0" />
-                  <Label layoutX="266.0" layoutY="450.0" text="Telefono:">
+                  <PasswordField fx:id="TextRepetirClave" layoutX="218.0" layoutY="267.0" />
+                  <Label layoutX="263.0" layoutY="307.0" text="Nombres:">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="TextTelefono" layoutX="221.0" layoutY="477.0" />
-                  <Label layoutX="272.0" layoutY="519.0" text="Correo:">
+                  <TextField fx:id="TextNombres" layoutX="221.0" layoutY="336.0" />
+                  <Label layoutX="263.0" layoutY="376.0" text="Apellidos:">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="TextCorreo" layoutX="221.0" layoutY="548.0" />
-                  <Button fx:id="BtnCrearCuenta" layoutX="252.0" layoutY="684.0" mnemonicParsing="false" onAction="#CrearCuentaClic" text="Crear cuenta" />
-                  <Button fx:id="BtnVolver" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="Volver" />
-                  <Label layoutX="270.0" layoutY="588.0" text="Cedula:">
+                  <TextField fx:id="TextApellidos" layoutX="222.0" layoutY="405.0" />
+                  <Label layoutX="266.0" layoutY="445.0" text="Telefono:">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="TextCedula" layoutX="219.0" layoutY="617.0" />
-                  <TextField fx:id="TextNombres" layoutX="221.0" layoutY="348.0" />
-                  <Label layoutX="263.0" layoutY="322.0" text="Nombres:">
+                  <TextField fx:id="TextTelefono" layoutX="221.0" layoutY="475.0" />
+                  <Label layoutX="272.0" layoutY="515.0" text="Correo:">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="263.0" layoutY="388.0" text="Apellidos:">
+                  <TextField fx:id="TextCorreo" layoutX="221.0" layoutY="545.0" />
+                  <Label layoutX="274.0" layoutY="584.0" text="Cedula:">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="TextApellidos" layoutX="222.0" layoutY="420.0" />
+                  <TextField fx:id="TextCedula" layoutX="219.0" layoutY="614.0" />
+                  <Button fx:id="BtnCrearCuenta" layoutX="252.0" layoutY="676.0" mnemonicParsing="false" onAction="#CrearCuentaClic" text="Crear cuenta" />
+                  <Button fx:id="BtnVolver" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Volver" prefHeight="25.0" prefWidth="51.0" text="Volver" />
                </children>
             </AnchorPane>
         </content>
