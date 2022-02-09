@@ -28,7 +28,7 @@ public class CRUD {
             e.printStackTrace();
         }
     }
-    public static Usuario leerUsuario(String correo) {
+    public static Usuario leerCorreo(String correo) {
         //Leer usuario
         Usuario Usuario = null;
         try {
@@ -50,7 +50,60 @@ public class CRUD {
             }
             conexion.close();
         } catch (SQLException e) {
-            /*e.printStackTrace()*/System.out.println("el correo no es usado por un usuario");
+            /*e.printStackTrace()*/System.out.println("El correo no es usado por un usuario");
+            
+        }   return Usuario;
+    }
+    public static Usuario leerCedula(int Cedula) {
+        //Leer usuario
+        Usuario Usuario = null;
+        try {
+            Connection conexion = Conexion.getConnection();
+            String sql = "SELECT * FROM USUARIO WHERE Cedula = ?";
+            PreparedStatement ps = conexion.prepareStatement(sql);
+            ps.setInt(1, Cedula);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Usuario = new Usuario();
+                Usuario.setCedula(rs.getInt("Cedula"));
+                Usuario.setUsername(rs.getString("Nickname"));
+                Usuario.setNombre(rs.getString("Nombre"));
+                Usuario.setApellido(rs.getString("Apellido"));
+                Usuario.setCorreo(rs.getString("Correo_Electronico_Usu"));
+                Usuario.setContraseña(rs.getString("Contrasena_Usu"));
+                Usuario.setNumeroTelefonico(rs.getInt("Telefono_Usu"));
+                //Usuario.setFoto(rs.getBinaryStream("FOTO_PERFIL"));
+            }
+            conexion.close();
+        } catch (SQLException e) {
+            /*e.printStackTrace()*/System.out.println("La cedula no es usada por un usuario");
+            
+        }   return Usuario;
+    }
+
+    public static Usuario leerUsuario(String username) {
+        //Leer usuario
+        Usuario Usuario = null;
+        try {
+            Connection conexion = Conexion.getConnection();
+            String sql = "SELECT * FROM USUARIO WHERE Nickname = ?";
+            PreparedStatement ps = conexion.prepareStatement(sql);
+            ps.setString(1, username);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Usuario = new Usuario();
+                Usuario.setCedula(rs.getInt("Cedula"));
+                Usuario.setUsername(rs.getString("Nickname"));
+                Usuario.setNombre(rs.getString("Nombre"));
+                Usuario.setApellido(rs.getString("Apellido"));
+                Usuario.setCorreo(rs.getString("Correo_Electronico_Usu"));
+                Usuario.setContraseña(rs.getString("Contrasena_Usu"));
+                Usuario.setNumeroTelefonico(rs.getInt("Telefono_Usu"));
+                //Usuario.setFoto(rs.getBinaryStream("FOTO_PERFIL"));
+            }
+            conexion.close();
+        } catch (SQLException e) {
+            /*e.printStackTrace()*/System.out.println("El nombre de usuario no es usado por un usuario");
             
         }   return Usuario;
     }

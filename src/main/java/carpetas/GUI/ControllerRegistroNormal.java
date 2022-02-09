@@ -48,15 +48,23 @@ public class ControllerRegistroNormal {
         int Cedula = Integer.parseInt(TextCedula.getText());
         int Telefono = Integer.parseInt(TextTelefono.getText());
         Usuario temp = new Usuario(Cedula, TextUsuario.getText(), TextNombres.getText(), TextApellidos.getText(), TextClave.getText(), TextCorreo.getText(), Telefono);
-        if (TextClave.getText().equals(TextRepetirClave.getText())) {
-                CRUD.crearUsuario(temp);
-                System.out.println("Cuenta creada");
-            } else {
-                System.out.println("Las contraseñas no coinciden");
+        if (CRUD.leerUsuario(temp.getUsername())==null && CRUD.leerCedula(temp.getCedula())==null && CRUD.leerCorreo(temp.getCorreo())==null) {    
+            if (TextClave.getText().equals(TextRepetirClave.getText())) {
+                    CRUD.crearUsuario(temp);
+                    System.out.println("Cuenta creada");
+                } else {
+                    System.out.println("Las contraseñas no coinciden");
+                }
+        } else {
+            if(CRUD.leerUsuario(TextUsuario.getText())!=null) {
+                System.out.println("El usuario ya existe");
             }
-        // } else {
-        //     System.out.println("El usuario ya existe");
-        //}
+            else if(CRUD.leerCedula(Cedula)!=null) {
+                System.out.println("La cedula ya existe");
+            }
+            else if(CRUD.leerCorreo(TextCorreo.getText())!=null) {
+                System.out.println("El correo ya existe");
+            }
+        }
     }
-
 }
