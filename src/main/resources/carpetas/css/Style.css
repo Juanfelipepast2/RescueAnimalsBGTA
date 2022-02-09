@@ -13,7 +13,7 @@
   -fx-border-radius: 0 10 0 10;
 }
 
-.button {
+.boton {
     
   -fx-background-radius: 30 30 30 30;
   -fx-border-radius: 30 30 30 30;
@@ -42,19 +42,35 @@
   background-color: rgb(5, 133, 87);
 }
 
+
 #panelBusqueda{
   -fx-background-color: rgb(255, 255, 255);
   -fx-background-radius: 30 30 30 30;
 }
 
-.barraBusqueda{
-  -fx-background-color: rgba(255, 255, 255, 0);
+.trasparent{
+  -fx-background-color: rgba(0, 0, 0, 0);
+}
+
+.scrollPane{
+  -fx-background: rgb(255, 234, 206);
+  -fx-border-color: rgb(255, 234, 206);
 }
 
 #panelAnimalSeleccionado{
   -fx-background-radius: 30 30 30 30;
   -fx-background-color: rgb(255, 255, 255);
 }
+
+
+.sombra{
+  -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.1), 10.0, 0.0, 0.0, 10.0);
+}
+
+.animal{
+  -fx-background-radius: 30 30 30 30;
+}
+
 
 
 /* 5, 133, 87

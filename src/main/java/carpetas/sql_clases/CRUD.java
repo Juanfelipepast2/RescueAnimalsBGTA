@@ -1,7 +1,7 @@
 package carpetas.sql_clases;
 
 import java.sql.*;
-
+import java.util.ArrayList;
 
 import carpetas.clases.*;
 
@@ -82,7 +82,28 @@ public class CRUD {
         }   return fundacion;
     }
 
-
+    public static ArrayList<Animal> LeerAnimales(){
+        Connection conn = Conexion.getConnection();
+        ArrayList<Animal> animales = new ArrayList<>();
+        String sql = "SELECT * FROM ANIMAL";
+        try{
+            Statement sm = conn.createStatement();
+            ResultSet rs = sm.executeQuery(sql);
+            while(rs.next()){
+                Animal animal = new Animal();
+                animal.setID_Animal(rs.getInt(1));
+                animal.setID_Fund(rs.getInt(2));
+                animal.setNombre_Animal(rs.getString(4));
+                animal.setTipo_Animal(rs.getString(5));
+                animal.setRaza_Animal(rs.getString(6));
+                animales.add(animal);
+            }
+            conn.close();
+        }catch (SQLException e){
+            System.out.println(e.getMessage());
+        }
+        return animales;
+    }
 
     
 }
