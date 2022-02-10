@@ -184,9 +184,9 @@
                                     </Label>
                                  </children>
                               </HBox>
-                              <HBox prefHeight="268.0" prefWidth="268.0" styleClass="sombra">
+                              <HBox alignment="CENTER" prefHeight="268.0" prefWidth="268.0" styleClass="sombra" VBox.vgrow="ALWAYS">
                                  <children>
-                                    <ImageView fx:id="fotoAnimalPanel" fitHeight="268.0" fitWidth="268.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="fotoAnimalPanel" fitHeight="268.0" fitWidth="268.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                                        <image>
                                           <Image url="@../../Img/resultados-icono-peludos%20-%20copia.png" />
                                        </image>

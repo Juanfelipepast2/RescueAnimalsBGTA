@@ -42,7 +42,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="250.0" prefWidth="200.0" style="-fx-background-color: white;" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carpetas.GUI.ControladorItemAnimalUsuario">
+<VBox maxHeight="250.0" maxWidth="200.0" minHeight="250.0" minWidth="200.0" prefHeight="250.0" prefWidth="200.0" style="-fx-background-color: rgb(230,230,230);" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carpetas.GUI.ControladorItemAnimalUsuario">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="sombra" stylesheets="@../css/Style.css" VBox.vgrow="ALWAYS">
          <center>

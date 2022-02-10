@@ -41,6 +41,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -136,10 +137,15 @@
                   <Font name="Britannic Bold" size="18.0" fx:id="x1111" />
                </font>
             </Label>
-            <ImageView fx:id="vistaImagen" fitHeight="227.0" fitWidth="355.0" layoutX="636.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Img/resultados-icono-peludos.png" />
-               </image></ImageView>
+            <HBox alignment="CENTER" layoutX="700.0" layoutY="259.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="vistaImagen" fitHeight="227.0" fitWidth="227.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                     <image>
+                        <Image url="@../../Img/resultados-icono-peludos%20-%20copia.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
          </children>
          <cursor>
             <Cursor fx:constant="DEFAULT" />
