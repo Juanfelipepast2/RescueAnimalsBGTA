@@ -12,11 +12,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class ControllerInicioDeSesion {
@@ -73,7 +75,7 @@ public class ControllerInicioDeSesion {
             }
             return;
         } else {
-            System.out.println("No existe un usuario o fundación con ese correo");
+            AlertaError("Inicio de sesión", "No existe un usuario o una fundación con ese correo");
         }
     }
 
@@ -82,7 +84,7 @@ public class ControllerInicioDeSesion {
             System.out.println("Bienvenido");
             return true;
         } else {
-            System.out.println("Usuario o contraseña incorrectos");
+            AlertaError("Inicio de sesión", "Usuario o contraseña incorrectos");
             return false;
         }
     }
@@ -126,4 +128,17 @@ public class ControllerInicioDeSesion {
         stage.show();
     }
 
+    @FXML
+    void AlertaInformacion(String Titulo, String Mensaje) {
+        Alert AlertaInformacion = new Alert(AlertType.NONE, Mensaje, ButtonType.OK);
+        AlertaInformacion.setTitle(Titulo);
+        AlertaInformacion.showAndWait();
+    }
+
+    @FXML
+    void AlertaError(String Titulo, String Mensaje) {
+        Alert AlertaError = new Alert(AlertType.ERROR, Mensaje, ButtonType.OK);
+        AlertaError.setTitle(Titulo);
+        AlertaError.showAndWait();
+    }
 }
