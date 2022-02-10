@@ -20,7 +20,7 @@ import carpetas.clases.Animal;
 import carpetas.clases.Fundacion;
 import carpetas.sql_clases.Conexion;
 
-public class VistaFundacionControlador {
+public class ControladorAgregarAnimalFundacion {
 
     private ByteArrayOutputStream imagen;
     private Animal animal;

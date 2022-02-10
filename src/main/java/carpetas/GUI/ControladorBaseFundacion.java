@@ -38,10 +38,10 @@ public class ControladorBaseFundacion {
     @FXML
     void verFundacion(ActionEvent event) throws IOException{        
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/carpetas/view/Vista Fundación.fxml"));;
+        fxmlLoader.setLocation(getClass().getResource("/carpetas/view/VistaAgregarAnimalFundacion.fxml"));;
         Pane pane = fxmlLoader.load();
 
-        VistaFundacionControlador vistaFund = fxmlLoader.getController();        
+        ControladorAgregarAnimalFundacion vistaFund = fxmlLoader.getController();        
         vistaFund.setFund(fund);
         mainPane.getChildren().setAll(pane);
     }

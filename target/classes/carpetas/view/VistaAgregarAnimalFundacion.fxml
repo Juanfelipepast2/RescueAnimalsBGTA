@@ -44,7 +44,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox minHeight="720.0" minWidth="1030.0" prefHeight="720.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carpetas.GUI.VistaFundacionControlador">
+<VBox minHeight="720.0" minWidth="1030.0" prefHeight="720.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carpetas.GUI.ControladorAgregarAnimalFundacion">
   <children>
   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="724.0" prefWidth="1030.0" styleClass="ventanaElegida" stylesheets="@../css/Style.css">
          <children>
