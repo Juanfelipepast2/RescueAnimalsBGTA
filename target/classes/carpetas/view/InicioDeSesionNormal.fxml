@@ -40,6 +40,6 @@
       <PasswordField fx:id="TextClave2" layoutX="226.0" layoutY="207.0" />
       <CheckBox fx:id="CheckBoxClave" layoutX="241.0" layoutY="237.0" mnemonicParsing="false" onAction="#mostrarContrasena" text="Mostrar contraseña" />
       <Button fx:id="BtnIniciarSesion" layoutX="258.0" layoutY="281.0" mnemonicParsing="false" onAction="#IniciarSesionClic" text="Iniciar sesión" />
-      <Button fx:id="BtnRegistro" layoutX="198.0" layoutY="335.0" mnemonicParsing="false" opacity="0.24" prefHeight="25.0" prefWidth="207.0" />
+      <Button fx:id="BtnRegistro" layoutX="198.0" layoutY="335.0" mnemonicParsing="false" onAction="#irRegistro" opacity="0.24" prefHeight="25.0" prefWidth="207.0" />
    </children>
 </AnchorPane>

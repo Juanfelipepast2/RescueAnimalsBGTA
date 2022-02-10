@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
@@ -41,6 +42,19 @@ public class ControllerInicioDeSesion {
     private Stage stage;
     
     
+    @FXML
+    void irRegistro(ActionEvent event) throws IOException{
+        Parent root;
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/carpetas/view/RegistroNormal.fxml"));
+        root = loader.load();         
+        ControllerRegistroNormal registro = loader.getController();        
+        Scene scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);        
+        stage.show();
+    }
+
 
     @FXML
     void IniciarSesionClic(ActionEvent event) throws IOException {

@@ -1,11 +1,17 @@
 package carpetas.GUI;
 
+import java.io.IOException;
+
 import carpetas.clases.Fundacion;
 import carpetas.sql_clases.CRUD;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -13,6 +19,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Stage;
 
 public class ControllerRegistroFundacion {
 
@@ -48,6 +55,8 @@ public class ControllerRegistroFundacion {
     @FXML
     private TextField TextTelefono;
 
+    private Stage stage;
+
     ObservableList Localidades = FXCollections.observableArrayList("1. Usaquén", "2. Chapinero", "3. Santa fé", "4. San Cristóbal", "5. Usme", "6. Tunjuelito", "7. Bosa", "8. Kennedy", "9. Fontibón", "10. Engativá", "11. Suba", "12. Barrios Unidos", "13. Teusaquillo", "14. Los Mártires", "15. Antonio Nariño", "16. Puente Aranda", "17. Candelaria", "18. Rafael Uribe Uribe", "19. Ciudad Bolívar", "20. Sumapaz");
 
     @FXML
@@ -56,7 +65,7 @@ public class ControllerRegistroFundacion {
     }
 
     @FXML
-    void CrearCuentaFunClic(ActionEvent event) {
+    void CrearCuentaFunClic(ActionEvent event) throws IOException {
         //Crear cuenta revisando que el correo y el ID no exista en la base de datos
         int ID = Integer.parseInt(TextID.getText());
         System.out.println(ID);
@@ -67,6 +76,7 @@ public class ControllerRegistroFundacion {
             if (TextClave.getText().equals(TextRepetirClave.getText())) {
                     CRUD.crearFundacion(temp);
                     AlertaInformacion("Registro Fundación", "La cuenta se ha creado correctamente");
+                    cambiarVentana(event, temp);
                 } else {
                     AlertaError("Registro Fundación", "Las contraseñas no coinciden");
                 }
@@ -139,6 +149,34 @@ public class ControllerRegistroFundacion {
             return 20;
         };
         return 0;
+    }
+    @FXML
+    void volver(ActionEvent event) throws IOException {
+        Parent root;
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/carpetas/view/InicioDeSesionNormal.fxml"));
+        root = loader.load();
+        ControllerInicioDeSesion controlInicio = loader.getController();
+        Scene scene = new Scene(root);
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    void cambiarVentana(ActionEvent event, Fundacion fund) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/carpetas/view/Base_vista_fundacion.fxml"));
+        Parent root;
+        root = loader.load();
+
+        ControladorBaseFundacion controlFund = new ControladorBaseFundacion();
+
+        controlFund = loader.getController();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        controlFund.setFundacion(fund);
+
+        stage.show();
     }
 
 }

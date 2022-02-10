@@ -231,7 +231,7 @@ public class CRUD {
     public static ArrayList<Animal> LeerAnimalesIDFundacion(int IdFund){
         Connection conn = Conexion.getConnection();
         ArrayList<Animal> animales = new ArrayList<>();
-        String sql = "SELECT ID_Animal, ANIMAL.ID_Fund, Nombre_Ani, Tipo, Raza, FOTO_ANIMAL, Nombre_Fun FROM ANIMAL, FUNDACION WHERE FUNDACION.ID_Fund = " + IdFund;
+        String sql = "SELECT ID_Animal, ANIMAL.ID_Fund, Nombre_Ani, Tipo, Raza, FOTO_ANIMAL  FROM ANIMAL  WHERE ANIMAL.ID_Fund = " + IdFund;
         try{
             Statement sm = conn.createStatement();
             
@@ -242,8 +242,7 @@ public class CRUD {
                 animal.setID_Fund(rs.getInt("ID_Fund"));
                 animal.setNombre_Animal(rs.getString("Nombre_Ani"));
                 animal.setTipo_Animal(rs.getString("Tipo"));
-                animal.setRaza_Animal(rs.getString("Raza"));
-                animal.setNombre_Fund(rs.getString("Nombre_Fun"));
+                animal.setRaza_Animal(rs.getString("Raza"));                ;
                 animal.setFotoMostrable(rs.getBytes("FOTO_ANIMAL"));
                 animales.add(animal);
             }
