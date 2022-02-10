@@ -181,7 +181,7 @@
                                           <Insets bottom="20.0" top="40.0" />
                                        </VBox.margin>
                                     </ImageView>
-                                    <Button mnemonicParsing="false" styleClass="boton" stylesheets="@../css/Style.css" text="Cambiar imágen de perfil">
+                                    <Button fx:id="botonCambiarImagenFundacion" mnemonicParsing="false" styleClass="boton" stylesheets="@../css/Style.css" text="Cambiar imágen de perfil">
                                        <font>
                                           <Font name="Britannic Bold" size="18.0" />
                                        </font>
