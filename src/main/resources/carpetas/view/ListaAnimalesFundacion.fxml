@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1031.0" style="-fx-background: rgb(255, 234, 206);" styleClass="ventanaElegida" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorListaAnimalesFundacion">
+   <children>
+      <AnchorPane prefHeight="240.0" prefWidth="1031.0">
+         <children>
+            <ImageView fitHeight="250.0" fitWidth="1031.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Img/7306494.jpg" />
+               </image>
+            </ImageView>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="246.0" prefWidth="1031.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="59.0" prefWidth="352.0" styleClass="sombra" stylesheets="@../css/Style.css" text="MIS ANIMALES" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Britannic Bold" size="52.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="20.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets bottom="30.0" left="100.0" right="100.0" top="30.0" />
+         </VBox.margin>
+         <children>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" style="-fx-background: rgb(255,234,206);" styleClass="trasparent" stylesheets="@../css/Style.css" VBox.vgrow="ALWAYS">
+               <content>
+                  <GridPane fx:id="gridAnimalesFundacion" prefHeight="0.0" prefWidth="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</VBox>

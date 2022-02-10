@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="800.0" style="-fx-background-color: white;" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorItemAnimalFundacion">
+   <styleClass>
+      <String fx:value="sombra" />
+      <String fx:value="animal" />
+   </styleClass>
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <right>
+            <VBox alignment="CENTER" prefHeight="180.0" prefWidth="180.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="fotoAnimalItemFundacion" fitHeight="180.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                     <image>
+                        <Image url="@../../Img/resultados-icono-peludos%20-%20copia.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <BorderPane.margin>
+                  <Insets right="32.0" />
+               </BorderPane.margin>
+            </VBox>
+         </right>
+         <left>
+            <VBox prefHeight="180.0" prefWidth="557.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="566.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="nombreAnimalItemFundacion" prefHeight="45.0" prefWidth="390.0" text="Nombre Animal">
+                           <font>
+                              <Font name="Britannic Bold" size="50.0" />
+                           </font>
+                        </Label>
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="CENTER_LEFT" prefHeight="95.0" prefWidth="75.0">
+                           <children>
+                              <Label prefWidth="65.0" text="Tipo:">
+                                 <font>
+                                    <Font name="Britannic Bold" size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="8.0" top="8.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Raza:">
+                                 <font>
+                                    <Font name="Britannic Bold" size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="8.0" top="8.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER_LEFT" prefHeight="95.0" prefWidth="377.0">
+                           <children>
+                              <Label fx:id="tipoAnimalItemFundacion" prefHeight="24.0" prefWidth="366.0" text="Tipo" textFill="#058557">
+                                 <font>
+                                    <Font name="Britannic Bold" size="23.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="8.0" top="8.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="razaAnimalItemFundacion" prefHeight="24.0" prefWidth="357.0" text="Raza" textFill="#058557">
+                                 <font>
+                                    <Font name="Britannic Bold" size="23.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="8.0" top="8.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets left="20.0" />
+               </BorderPane.margin>
+            </VBox>
+         </left>
+      </BorderPane>
+   </children>
+</VBox>
