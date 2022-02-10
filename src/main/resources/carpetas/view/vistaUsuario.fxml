@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="720.0" prefWidth="1031.0" styleClass="ventanaElegida" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carpetas.GUI.ControladorVistaUsuario">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <right>
+            <VBox prefHeight="708.0" prefWidth="308.0" styleClass="adoptarAnimal" stylesheets="@../css/Style.css" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="202.0" prefWidth="308.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="53.0" prefWidth="201.0" styleClass="sombra" stylesheets="@../css/Style.css" text="MIS" textAlignment="CENTER">
+                           <font>
+                              <Font name="Britannic Bold" size="52.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="59.0" prefWidth="245.0" styleClass="sombra" stylesheets="@../css/Style.css" text="ANIMALES" textAlignment="CENTER">
+                           <font>
+                              <Font name="Britannic Bold" size="52.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox id="panelAnimalSeleccionado" prefHeight="459.0" prefWidth="268.0" styleClass="sombra" stylesheets="@../css/Style.css">
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" top="30.0" />
+                     </VBox.margin>
+                     <children>
+                        <HBox id="panelAnimalSeleccionado" alignment="CENTER" prefHeight="435.0" prefWidth="268.0" style="-fx-background-color: rgb(255,255,255);" styleClass="sombra" stylesheets="@../css/Style.css" VBox.vgrow="ALWAYS">
+                           <children>
+                              <ScrollPane id="panelAnimalSeleccionado" prefHeight="451.0" prefWidth="219.0" style="-fx-background: white;" stylesheets="@../css/Style.css">
+                                 <content>
+                                    <GridPane fx:id="gridUsuario" prefHeight="0.0" prefWidth="0.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                    </GridPane>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </right>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="182.0" prefWidth="723.0" styleClass="sombra" stylesheets="@../css/Style.css">
+                     <children>
+                        <ImageView fitHeight="200.0" fitWidth="725.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Img/7306357.jpg" />
+                           </image>
+                        </ImageView>
+                        <HBox alignment="CENTER" layoutY="-3.0" prefHeight="192.0" prefWidth="723.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="59.0" prefWidth="352.0" styleClass="sombra" stylesheets="@../css/Style.css" text="MI USUARIO" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="Britannic Bold" size="52.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+                  <HBox alignment="CENTER" prefHeight="245.0" prefWidth="723.0" styleClass="sombra" stylesheets="@../css/Style.css">
+                     <children>
+                        <ImageView fx:id="imagenUsuario" fitHeight="245.0" fitWidth="245.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Img/icone-utilisateur-gris.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="216.0" prefWidth="723.0">
+                     <children>
+                        <VBox alignment="CENTER_LEFT" prefHeight="216.0" prefWidth="271.0" styleClass="sombra" stylesheets="@../css/Style.css">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="240.0" text="NICKNAME:" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Britannic Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="240.0" text="NOMBRE:" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Britannic Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="240.0" text="APELLIDO:" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Britannic Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="240.0" text="CÉDULA:" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Britannic Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="240.0" text="CORREO ELECTRÓNICO:" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Britannic Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="240.0" text="TELÉFONO:" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Britannic Bold" size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER_LEFT" prefHeight="216.0" prefWidth="394.0" style="-fx-background-color: rgb(255,255,255);" stylesheets="@../css/Style.css">
+                           <children>
+                              <Label fx:id="nicknameUsuario" prefHeight="35.0" prefWidth="240.0" text="Nickname" textFill="#0000009c" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Britannic Bold" size="22.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="nombreUsuario" prefHeight="35.0" prefWidth="240.0" text="Nombre" textFill="#0000009c" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Britannic Bold" size="22.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="apellidoUsuario" prefHeight="35.0" prefWidth="240.0" text="Apellido" textFill="#0000009c" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Britannic Bold" size="22.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="cedulaUsuario" prefHeight="35.0" prefWidth="240.0" text="Cédula" textFill="#0000009c" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Britannic Bold" size="22.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="correoElectronicoUsuario" prefHeight="35.0" prefWidth="240.0" text="Correo electrónico" textFill="#0000009c" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Britannic Bold" size="22.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="telefonoUsuario" prefHeight="35.0" prefWidth="240.0" text="Teléfono" textFill="#0000009c" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Britannic Bold" size="22.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                           <styleClass>
+                              <String fx:value="animal" />
+                              <String fx:value="sombra" />
+                           </styleClass>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="30.0" top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</VBox>

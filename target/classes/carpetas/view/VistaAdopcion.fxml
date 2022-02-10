@@ -57,39 +57,56 @@
                <center>
                   <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                      <children>
-                        <HBox alignment="CENTER_RIGHT" prefHeight="51.0" prefWidth="683.0">
-                           <VBox.margin>
-                              <Insets left="20.0" right="20.0" top="20.0" />
-                           </VBox.margin>
+                        <AnchorPane prefHeight="189.0" prefWidth="725.0">
                            <children>
-                              <Button fx:id="botonMiUsuario" mnemonicParsing="false" prefHeight="32.0" prefWidth="117.0" stylesheets="@../css/Style.css" text="Mi usuario" textFill="#7c7c7c">
-                                 <font>
-                                    <Font name="Britannic Bold" size="18.0" />
-                                 </font>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                                 <styleClass>
-                                    <String fx:value="boton" />
-                                    <String fx:value="sombra" />
-                                 </styleClass>
-                              </Button>
-                              <ImageView fitHeight="50.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                              <ImageView fitHeight="195.0" fitWidth="723.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../Img/icone-utilisateur-gris.png" />
+                                    <Image url="@../../Img/7306369.jpg" />
                                  </image>
                               </ImageView>
+                              <VBox alignment="CENTER" prefHeight="192.0" prefWidth="723.0">
+                                 <children>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="51.0" prefWidth="541.0" style="-fx-background-color: white;" stylesheets="@../css/Style.css">
+                                       <children>
+                                          <Button fx:id="botonMiUsuario" mnemonicParsing="false" prefHeight="32.0" prefWidth="117.0" stylesheets="@../css/Style.css" text="Mi usuario" textFill="#7c7c7c">
+                                             <font>
+                                                <Font name="Britannic Bold" size="18.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <styleClass>
+                                                <String fx:value="boton" />
+                                                <String fx:value="sombra" />
+                                             </styleClass>
+                                          </Button>
+                                          <ImageView fitHeight="50.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                             <image>
+                                                <Image url="@../../Img/icone-utilisateur-gris.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="550.0" />
+                                       </VBox.margin>
+                                       <styleClass>
+                                          <String fx:value="animal" />
+                                          <String fx:value="sombra" />
+                                       </styleClass>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="62.0" prefWidth="723.0">
+                                       <children>
+                                          <Label alignment="CENTER" prefHeight="53.0" prefWidth="425.0" styleClass="sombra" stylesheets="@../css/Style.css" text="ADOPTAR ANIMAL" textAlignment="CENTER" textFill="WHITE">
+                                             <font>
+                                                <Font name="Britannic Bold" size="52.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
                            </children>
-                        </HBox>
-                        <HBox alignment="CENTER" prefHeight="62.0" prefWidth="723.0">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="53.0" prefWidth="425.0" styleClass="sombra" stylesheets="@../css/Style.css" text="ADOPTAR ANIMAL" textAlignment="CENTER" textFill="#058557">
-                                 <font>
-                                    <Font name="Britannic Bold" size="52.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
+                        </AnchorPane>
                         <HBox prefHeight="100.0" prefWidth="200.0" stylesheets="@../css/Style.css" VBox.vgrow="ALWAYS">
                            <VBox.margin>
                               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -183,7 +200,7 @@
                                           <Font name="Britannic Bold" size="17.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="tipoAnimalPanel" alignment="CENTER" prefHeight="17.0" prefWidth="32.0" text="Tipo" />
+                                    <Label fx:id="tipoAnimalPanel" alignment="CENTER" prefHeight="17.0" prefWidth="35.0" text="Tipo" />
                                     <Label alignment="CENTER" prefWidth="60.0" text="RAZA:" HBox.hgrow="ALWAYS">
                                        <font>
                                           <Font name="Britannic Bold" size="17.0" />

@@ -17,7 +17,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("/carpetas/view/InicioDeSesionNormal"));
+        scene = new Scene(loadFXML("/carpetas/view/VistaAdopcion"));
         stage.setScene(scene);
         stage.show();
     }
