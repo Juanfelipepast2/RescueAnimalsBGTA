@@ -255,6 +255,32 @@ public class CRUD {
         return animales;
     }
 
+    public static ArrayList<Animal> LeerAnimalesCedula(int Cedula){
+        Connection conn = Conexion.getConnection();
+        ArrayList<Animal> animales = new ArrayList<>();
+        String sql = "SELECT ID_Animal, ANIMAL.ID_Fund, Nombre_Ani, Tipo, Raza, FOTO_ANIMAL FROM ANIMAL WHERE ANIMAL.Cedula = " + Cedula;
+        try{
+            Statement sm = conn.createStatement();
+            
+            ResultSet rs = sm.executeQuery(sql);
+            while(rs.next()){
+                Animal animal = new Animal();
+                animal.setID_Animal(rs.getInt("ID_Animal"));
+                animal.setID_Fund(rs.getInt("ID_Fund"));
+                animal.setNombre_Animal(rs.getString("Nombre_Ani"));
+                animal.setTipo_Animal(rs.getString("Tipo"));
+                animal.setRaza_Animal(rs.getString("Raza"));
+                animal.setFotoMostrable(rs.getBytes("FOTO_ANIMAL"));
+                animales.add(animal);
+            }
+            conn.close();
+        }catch (SQLException e){
+            //System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+        return animales;
+    }
+
     public static void updatePhotoUser(Usuario user){
         Connection conn = Conexion.getConnection();
         String query = "UPDATE USUARIO SET FOTO_PERFIL = ? WHERE Cedula = ?";
