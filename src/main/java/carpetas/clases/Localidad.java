@@ -9,6 +9,8 @@ public class Localidad{
     this.Nombre_Loc = _Nombre_Loc;
   }
 
+  public Localidad(){}
+
   public int getID_Localidad(){
     return this.ID_Localidad;
   }

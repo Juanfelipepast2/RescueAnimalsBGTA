@@ -2,11 +2,12 @@ package carpetas.GUI;
 
 
 import java.io.IOException;
-import java.sql.SQLException;
+
 
 import com.jfoenix.controls.JFXButton;
 
 import carpetas.clases.Fundacion;
+import carpetas.sql_clases.CRUD;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,21 +34,45 @@ public class ControladorBaseFundacion {
     private JFXButton btnFundacion;
 
     @FXML
+    private JFXButton btnListaAnimales;
+
+    @FXML
     private Pane mainPane;
 
     @FXML
     void verFundacion(ActionEvent event) throws IOException{        
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/carpetas/view/VistaAgregarAnimalFundacion.fxml"));;
+        fxmlLoader.setLocation(getClass().getResource("/carpetas/view/VistaFundacion.fxml"));;
         Pane pane = fxmlLoader.load();
 
-        ControladorAgregarAnimalFundacion vistaFund = fxmlLoader.getController();        
-        vistaFund.setFund(fund);
+        ControladorVistaFundacion vistaFund = fxmlLoader.getController();        
+        vistaFund.setFund(fund);        
         mainPane.getChildren().setAll(pane);
     }
 
     @FXML
-    void verAnimalesFundacion(ActionEvent event) {
+    void verAnimalesFundacion(ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/carpetas/view/VistaAgregarAnimalFundacion.fxml"));;
+        Pane pane = fxmlLoader.load();
+        
+
+        ControladorAgregarAnimalFundacion addAnimal = fxmlLoader.getController();        
+        addAnimal.setFund(fund);
+        mainPane.getChildren().setAll(pane);
+    }
+
+    @FXML
+    void verListaAnimales(ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/carpetas/view/ListaAnimalesFundacion.fxml"));;
+        Pane pane = fxmlLoader.load();
+        
+
+        ControladorListaAnimalesFundacion listaAni = fxmlLoader.getController();        
+        listaAni.setFund(fund);
+        mainPane.getChildren().setAll(pane);
+        
 
     }
 

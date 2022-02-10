@@ -40,9 +40,14 @@ public class ControladorBaseUsuario {
     }
 
     @FXML
-    void verPerfil(ActionEvent event) {
-        
-        // Boton1.setStyle("-fx-background-color : rgb(9, 0, 90)");
+    void verPerfil(ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/carpetas/view/vistaUsuario.fxml"));;
+        Pane pane = fxmlLoader.load();
+
+        ControladorVistaUsuario vistaUser = fxmlLoader.getController();        
+        vistaUser.setUser(user);
+        mainPane.getChildren().setAll(pane);
 
     }
 
@@ -71,11 +76,6 @@ public class ControladorBaseUsuario {
         stage.show();
     }
 
-    void currentScene(String vista) {
-        if (vista.equals("XD")) {
-
-        }
-    }
 
     void setUser(Usuario user) {
         this.user = user;

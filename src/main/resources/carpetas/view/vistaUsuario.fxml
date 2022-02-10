@@ -32,6 +32,7 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
@@ -127,41 +128,41 @@
                   </HBox>
                   <HBox prefHeight="216.0" prefWidth="723.0">
                      <children>
-                        <VBox alignment="CENTER_LEFT" prefHeight="216.0" prefWidth="271.0" styleClass="sombra" stylesheets="@../css/Style.css">
+                        <VBox alignment="CENTER_LEFT" prefHeight="216.0" prefWidth="218.0" styleClass="sombra" stylesheets="@../css/Style.css">
                            <children>
                               <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="240.0" text="NICKNAME:" VBox.vgrow="ALWAYS">
                                  <font>
-                                    <Font name="Britannic Bold" size="22.0" />
+                                    <Font name="Britannic Bold" size="20.0" />
                                  </font>
                               </Label>
                               <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="240.0" text="NOMBRE:" VBox.vgrow="ALWAYS">
                                  <font>
-                                    <Font name="Britannic Bold" size="22.0" />
+                                    <Font name="Britannic Bold" size="20.0" />
                                  </font>
                               </Label>
                               <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="240.0" text="APELLIDO:" VBox.vgrow="ALWAYS">
                                  <font>
-                                    <Font name="Britannic Bold" size="22.0" />
+                                    <Font name="Britannic Bold" size="20.0" />
                                  </font>
                               </Label>
                               <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="240.0" text="CÉDULA:" VBox.vgrow="ALWAYS">
                                  <font>
-                                    <Font name="Britannic Bold" size="22.0" />
+                                    <Font name="Britannic Bold" size="20.0" />
                                  </font>
                               </Label>
                               <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="240.0" text="CORREO ELECTRÓNICO:" VBox.vgrow="ALWAYS">
                                  <font>
-                                    <Font name="Britannic Bold" size="22.0" />
+                                    <Font name="Britannic Bold" size="20.0" />
                                  </font>
                               </Label>
                               <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="240.0" text="TELÉFONO:" VBox.vgrow="ALWAYS">
                                  <font>
-                                    <Font name="Britannic Bold" size="22.0" />
+                                    <Font name="Britannic Bold" size="20.0" />
                                  </font>
                               </Label>
                            </children>
                         </VBox>
-                        <VBox alignment="CENTER_LEFT" prefHeight="216.0" prefWidth="394.0" style="-fx-background-color: rgb(255,255,255);" stylesheets="@../css/Style.css">
+                        <VBox alignment="CENTER_LEFT" prefHeight="216.0" prefWidth="312.0" style="-fx-background-color: rgb(255,255,255);" stylesheets="@../css/Style.css">
                            <children>
                               <Label fx:id="nicknameUsuario" prefHeight="35.0" prefWidth="240.0" text="Nickname" textFill="#0000009c" VBox.vgrow="ALWAYS">
                                  <font>
@@ -216,7 +217,18 @@
                               <String fx:value="animal" />
                               <String fx:value="sombra" />
                            </styleClass>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
                         </VBox>
+                        <JFXButton fx:id="btnImagen" alignment="CENTER" onAction="#cambiarImagen" prefHeight="44.0" prefWidth="133.0" styleClass="boton" stylesheets="@../css/Style.css" text="Cambiar Imagen">
+                           <HBox.margin>
+                              <Insets left="10.0" top="86.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Britannic Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
                      </children>
                      <VBox.margin>
                         <Insets left="30.0" top="20.0" />

@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1031.0" style="-fx-background: rgb(255, 234, 206);" styleClass="ventanaElegida" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorListaAnimalesFundacion">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1031.0" style="-fx-background: rgb(255, 234, 206);" styleClass="ventanaElegida" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carpetas.GUI.ControladorListaAnimalesFundacion">
    <children>
       <AnchorPane prefHeight="240.0" prefWidth="1031.0">
          <children>

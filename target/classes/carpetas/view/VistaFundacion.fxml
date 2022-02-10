@@ -44,7 +44,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="720.0" prefWidth="1031.0" styleClass="ventanaElegida" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControladorVistaFundacion">
+<VBox prefHeight="720.0" prefWidth="1031.0" styleClass="ventanaElegida" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carpetas.GUI.ControladorVistaFundacion">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
          <center>
@@ -52,7 +52,7 @@
                <children>
                   <AnchorPane prefHeight="182.0" prefWidth="723.0" styleClass="sombra" stylesheets="@../css/Style.css">
                      <children>
-                        <ImageView fitHeight="249.0" fitWidth="1184.0" layoutX="-153.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="249.0" fitWidth="1157.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../Img/969999.jpg" />
                            </image>
@@ -181,7 +181,7 @@
                                           <Insets bottom="20.0" top="40.0" />
                                        </VBox.margin>
                                     </ImageView>
-                                    <Button fx:id="botonCambiarImagenFundacion" mnemonicParsing="false" styleClass="boton" stylesheets="@../css/Style.css" text="Cambiar imágen de perfil">
+                                    <Button fx:id="botonCambiarImagenFundacion" mnemonicParsing="false" onAction="#cambiarImagen" styleClass="boton" stylesheets="@../css/Style.css" text="Cambiar imágen de perfil">
                                        <font>
                                           <Font name="Britannic Bold" size="18.0" />
                                        </font>
