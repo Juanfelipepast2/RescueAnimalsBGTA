@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import carpetas.clases.Animal;
+import carpetas.clases.Usuario;
 import carpetas.sql_clases.CRUD;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,7 +23,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-public class ControladorAdoptarAnimal implements Initializable{
+public class ControladorAdoptarAnimal {
     @FXML
     private Button botonAdoptarPanel;
 
@@ -52,12 +54,26 @@ public class ControladorAdoptarAnimal implements Initializable{
     @FXML
     private GridPane grid;
 
-    
+    @FXML
+    void adoptar(ActionEvent event) {
+        CRUD.updateAnimalAdoptado(currentUser, currentAnimal.getID_Animal());
+        
+    }
+
+    private Usuario currentUser;
+
+    private Animal currentAnimal;
+
+
     private ArrayList<Animal> listaAnimales;
     private MyListener myListener;
 
+
+    
+
     private void elegirAnimal(Animal animal){
         try{
+        currentAnimal = animal;
         nombreAnimalPanel.setText(animal.getNombre_Animal());
         tipoAnimalPanel.setText(animal.getTipo_Animal());
         razaAnimalPanel.setText(animal.getRaza_Animal());
@@ -71,8 +87,10 @@ public class ControladorAdoptarAnimal implements Initializable{
         }
     }
 
-    @Override
-    public void initialize(URL Location, ResourceBundle resources){
+    
+    public void initialize(Usuario user){
+        currentUser = user;
+        botonMiUsuario.setText(currentUser.getUsername());
         getData();
 
         if(listaAnimales.size() > 0) {

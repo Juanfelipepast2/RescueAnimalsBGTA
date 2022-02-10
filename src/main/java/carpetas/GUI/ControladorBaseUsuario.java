@@ -58,9 +58,14 @@ public class ControladorBaseUsuario {
     }
 
     @FXML
-    void verAdoptar(ActionEvent event) {
-        CargadorFXML obj = new CargadorFXML();
-        mainPane.getChildren().setAll(obj.getPane("VistaAdopcion"));
+    void verAdoptar(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/carpetas/view/VistaAdopcion.fxml"));;
+        Pane pane = fxmlLoader.load();
+
+        ControladorAdoptarAnimal adopt = fxmlLoader.getController();        
+        adopt.initialize(user);
+        mainPane.getChildren().setAll(pane);
     }
 
     @FXML
@@ -77,8 +82,10 @@ public class ControladorBaseUsuario {
     }
 
 
-    void setUser(Usuario user) {
+    void setUser(Usuario user) throws IOException {
         this.user = user;
         btnPerfil.setText(this.user.getUsername());
+        
+        
     }
 }

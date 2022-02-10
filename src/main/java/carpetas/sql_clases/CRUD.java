@@ -283,8 +283,20 @@ public class CRUD {
         }catch(SQLException e){
             System.err.println(e.getMessage());
         }
-        
+    }
 
+    public static void updateAnimalAdoptado(Usuario usr, int ID_Animal){
+        Connection conn = Conexion.getConnection();
+        String query = "UPDATE ANIMAL SET Cedula = ?, ID_Fund = NULL WHERE ID_Animal = ?";
+        try{
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setInt(1, usr.getCedula());
+            ps.setInt(2, ID_Animal);
+            ps.executeUpdate();
+            conn.close();
+        }catch(SQLException e){
+            System.err.println(e.getMessage());
+        }
     }
 
     

@@ -223,7 +223,7 @@
                         </VBox>
                         <HBox alignment="CENTER" prefHeight="60.0" prefWidth="308.0">
                            <children>
-                              <Button fx:id="botonAdoptarPanel" mnemonicParsing="false" prefHeight="46.0" prefWidth="268.0" stylesheets="@../css/Style.css" text="ADOPTAR">
+                              <Button fx:id="botonAdoptarPanel" mnemonicParsing="false" onAction="#adoptar" prefHeight="46.0" prefWidth="268.0" stylesheets="@../css/Style.css" text="ADOPTAR">
                                  <font>
                                     <Font name="Britannic Bold" size="27.0" />
                                  </font>
