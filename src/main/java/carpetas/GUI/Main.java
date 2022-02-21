@@ -19,6 +19,7 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("/carpetas/view/InicioDeSesionNormal"));
         stage.setScene(scene);
+        stage.centerOnScreen();
         stage.show();
     }
 

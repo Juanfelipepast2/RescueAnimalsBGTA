@@ -53,9 +53,10 @@ public class ControladorVistaUsuario {
 
     @FXML
     void cambiarImagen(ActionEvent event) {
-        user.selectImage();
-        imagenUsuario.setImage(new Image(user.getRutaFotoElegida()));
+        user.selectImage();        
         CRUD.updatePhotoUser(user);
+        user = CRUD.leerUsuario(user.getUsername());
+        imagenUsuario.setImage(new Image(user.getFotoMostrable()));
     }
 
     void setUser(Usuario user){

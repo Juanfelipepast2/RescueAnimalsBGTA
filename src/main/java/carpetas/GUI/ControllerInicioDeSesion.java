@@ -46,15 +46,24 @@ public class ControllerInicioDeSesion {
     
     @FXML
     void irRegistro(ActionEvent event) throws IOException{
+        
+        /*
+
+
+        ESTE BLOQUE SOLO SE USA SI EL CONTROLADOR A USAR VA A RECIBIR INFORMACIÓN
+
+
         Parent root;
         
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/carpetas/view/RegistroNormal.fxml"));
         root = loader.load();         
-        ControllerRegistroNormal registro = loader.getController();        
+        //ControllerRegistroNormal registro = loader.getController();        
         Scene scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);        
         stage.show();
+        */
+        Main.setRoot("/carpetas/view/RegistroNormal");
     }
 
 
@@ -115,6 +124,7 @@ public class ControllerInicioDeSesion {
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);            
+            stage.centerOnScreen();
             controlUser.setUser(usr);
             
         } else if (fnd != null){
@@ -122,7 +132,8 @@ public class ControllerInicioDeSesion {
             controlFun = loader.getController();
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
-            stage.setScene(scene);            
+            stage.setScene(scene);        
+            stage.centerOnScreen();    
             controlFun.setFundacion(fnd);
         }
         stage.show();

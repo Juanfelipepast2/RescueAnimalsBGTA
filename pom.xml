@@ -12,12 +12,12 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>17</version>
+            <version>13</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>17</version>
+            <version>13</version>
         </dependency>
         <dependency>
             <groupId>org.xerial</groupId>
@@ -32,6 +32,7 @@
 
     </dependencies>
     <build>
+        <finalName>Rescue Animals</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -51,7 +52,7 @@
                         <!-- Usage: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>carpetas.App</mainClass>
+                            <mainClass>carpetas.GUI.App</mainClass>
                         </configuration>
                     </execution>
                 </executions>
@@ -66,7 +67,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>GUI.Main</mainClass>
+                            <mainClass>carpetas.GUI.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

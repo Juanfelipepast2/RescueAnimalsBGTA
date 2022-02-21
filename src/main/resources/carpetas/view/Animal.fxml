@@ -43,7 +43,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="150.0" maxWidth="550.0" minHeight="150.0" minWidth="550.0" onMousePressed="#click" prefHeight="150.0" prefWidth="550.0" style="-fx-background-color: white;" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carpetas.GUI.ControladorAnimalItem">
+<VBox maxHeight="150.0" maxWidth="550.0" minHeight="150.0" minWidth="550.0" onMousePressed="#click" prefHeight="150.0" prefWidth="550.0" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carpetas.GUI.ControladorAnimalItem">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/Style.css" VBox.vgrow="ALWAYS">
          <left>

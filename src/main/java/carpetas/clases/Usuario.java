@@ -122,9 +122,7 @@ public class Usuario {
             e.printStackTrace();
         }
         fotoElegida = bos.toByteArray();
-    
-        
-        
+  
     }
 
 

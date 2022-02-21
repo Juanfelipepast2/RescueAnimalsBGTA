@@ -5,6 +5,7 @@ import java.io.IOException;
 import com.jfoenix.controls.JFXButton;
 
 import carpetas.clases.Usuario;
+import carpetas.sql_clases.CRUD;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,13 +35,10 @@ public class ControladorBaseUsuario {
     @FXML
     private Pane mainPane;
 
-    @FXML
-    void initialize() {
-
-    }
 
     @FXML
     void verPerfil(ActionEvent event) throws IOException{
+        user = CRUD.leerUsuario(user.getUsername());
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/carpetas/view/vistaUsuario.fxml"));;
         Pane pane = fxmlLoader.load();
@@ -70,21 +68,28 @@ public class ControladorBaseUsuario {
 
     @FXML
     void cerrarSesion(ActionEvent event) throws IOException{
-        Parent root;
         
+        Parent root;        
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/carpetas/view/InicioDeSesionNormal.fxml"));
         root = loader.load();         
-        ControllerInicioDeSesion controlInicio = loader.getController();        
+        //ControllerInicioDeSesion controlInicio = loader.getController();   EL CONTROLADOR SOLO SE CARGA SI SE LE VA  A MANDAR INFORMACIÓN     
         Scene scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);        
+        stage.centerOnScreen();
         stage.show();
+        
+        
+        
+        
+
     }
 
 
     void setUser(Usuario user) throws IOException {
         this.user = user;
         btnPerfil.setText(this.user.getUsername());
+        verPerfil(new ActionEvent());
         
         
     }

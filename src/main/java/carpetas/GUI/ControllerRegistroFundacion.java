@@ -57,7 +57,7 @@ public class ControllerRegistroFundacion {
 
     private Stage stage;
 
-    ObservableList Localidades = FXCollections.observableArrayList("1. Usaquén", "2. Chapinero", "3. Santa fé", "4. San Cristóbal", "5. Usme", "6. Tunjuelito", "7. Bosa", "8. Kennedy", "9. Fontibón", "10. Engativá", "11. Suba", "12. Barrios Unidos", "13. Teusaquillo", "14. Los Mártires", "15. Antonio Nariño", "16. Puente Aranda", "17. Candelaria", "18. Rafael Uribe Uribe", "19. Ciudad Bolívar", "20. Sumapaz");
+    ObservableList<String> Localidades = FXCollections.observableArrayList("1. Usaquén", "2. Chapinero", "3. Santa fé", "4. San Cristóbal", "5. Usme", "6. Tunjuelito", "7. Bosa", "8. Kennedy", "9. Fontibón", "10. Engativá", "11. Suba", "12. Barrios Unidos", "13. Teusaquillo", "14. Los Mártires", "15. Antonio Nariño", "16. Puente Aranda", "17. Candelaria", "18. Rafael Uribe Uribe", "19. Ciudad Bolívar", "20. Sumapaz");
 
     @FXML
     private void initialize() {
@@ -152,15 +152,22 @@ public class ControllerRegistroFundacion {
     }
     @FXML
     void volver(ActionEvent event) throws IOException {
+        /*
+
+        ESTE BLOQUE SOLO SE USA SI EL CONTROLADOR A USAR VA A RECIBIR INFORMACIÓN
+
+        
         Parent root;
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/carpetas/view/InicioDeSesionNormal.fxml"));
         root = loader.load();
-        ControllerInicioDeSesion controlInicio = loader.getController();
+        //ControllerInicioDeSesion controlInicio = loader.getController();
         Scene scene = new Scene(root);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
+        */
+        Main.setRoot("/carpetas/view/InicioDeSesionNormal");
     }
 
     void cambiarVentana(ActionEvent event, Fundacion fund) throws IOException {

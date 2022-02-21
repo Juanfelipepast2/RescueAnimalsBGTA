@@ -5,11 +5,8 @@ import java.util.ArrayList;
 
 import carpetas.clases.*;
 
-
-
-
 public class CRUD {
-    //Crear usuario
+    // Crear usuario
     public static void crearUsuario(Usuario Usuario) {
         try {
             Connection conexion = Conexion.getConnection();
@@ -29,8 +26,9 @@ public class CRUD {
             e.printStackTrace();
         }
     }
+
     public static Usuario leerCorreo(String correo) {
-        //Leer usuario
+        // Leer usuario
         Usuario Usuario = null;
         try {
             Connection conexion = Conexion.getConnection();
@@ -51,12 +49,14 @@ public class CRUD {
             }
             conexion.close();
         } catch (SQLException e) {
-            /*e.printStackTrace()*/System.out.println("El correo no es usado por un usuario");
-            
-        }   return Usuario;
+            /* e.printStackTrace() */System.out.println("El correo no es usado por un usuario");
+
+        }
+        return Usuario;
     }
+
     public static Usuario leerCedula(int Cedula) {
-        //Leer usuario
+        // Leer usuario
         Usuario Usuario = null;
         try {
             Connection conexion = Conexion.getConnection();
@@ -77,13 +77,14 @@ public class CRUD {
             }
             conexion.close();
         } catch (SQLException e) {
-            /*e.printStackTrace()*/System.out.println("El correo no es usado por un usuario");
-            
-        }   return Usuario;
+            /* e.printStackTrace() */System.out.println("El correo no es usado por un usuario");
+
+        }
+        return Usuario;
     }
 
     public static Usuario leerUsuario(String username) {
-        //Leer usuario
+        // Leer usuario
         Usuario Usuario = null;
         try {
             Connection conexion = Conexion.getConnection();
@@ -104,13 +105,14 @@ public class CRUD {
             }
             conexion.close();
         } catch (SQLException e) {
-            /*e.printStackTrace()*/System.out.println("El nombre de usuario no es usado por un usuario");
-            
-        }   return Usuario;
+            /* e.printStackTrace() */System.out.println("El nombre de usuario no es usado por un usuario");
+
+        }
+        return Usuario;
     }
 
     public static Fundacion leerCorreoFundacion(String correo) {
-        //Leer usuario
+        // Leer usuario
         Fundacion fundacion = null;
         try {
             Connection conexion = Conexion.getConnection();
@@ -128,16 +130,17 @@ public class CRUD {
                 fundacion.setContrasena_Fun(rs.getString("Contrasena_Fun"));
                 fundacion.setTelefono_Fun(rs.getInt("Telefono_Fun"));
                 fundacion.setFotoMostrable(rs.getBinaryStream("FOTO_FUNDACION"));
-                
+
             }
             conexion.close();
         } catch (SQLException e) {
-            /*e.printStackTrace()*/System.out.println("El correo no es usado por una fundación");
-        }   return fundacion;
+            /* e.printStackTrace() */System.out.println("El correo no es usado por una fundación");
+        }
+        return fundacion;
     }
 
     public static Fundacion leerID(int ID) {
-        //Leer Cedula
+        // Leer Cedula
         Fundacion Fundacion = null;
         try {
             Connection conexion = Conexion.getConnection();
@@ -158,28 +161,58 @@ public class CRUD {
             }
             conexion.close();
         } catch (SQLException e) {
-            /*e.printStackTrace()*/System.out.println("El correo no es usado por una fundación");
-        }   return Fundacion;
+            /* e.printStackTrace() */System.out.println("El correo no es usado por una fundación");
+        }
+        return Fundacion;
     }
 
-    public static Localidad leerLocalidad(int ID){
+    public static Localidad leerLocalidad(int ID) {
         Localidad local = null;
         String query = "SELECT * FROM LOCALIDAD WHERE ID_Localidad=?";
-        try{
+        try {
             Connection conn = Conexion.getConnection();
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setInt(1, ID);
             ResultSet rs = ps.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 local = new Localidad();
                 local.setID_Localidad(rs.getInt(1));
                 local.setNombre_Loc(rs.getString(2));
             }
-        }catch(SQLException e){
+            conn.close();
+        } catch (SQLException e) {
 
         }
 
         return local;
+    }
+
+    public static Animal leerAnimal(int IDAnimal) {
+        Animal animal = null;
+        String query = "SELECT ID_Animal, ANIMAL.ID_Fund, Nombre_Ani, Tipo, Raza, FOTO_ANIMAL, Nombre_Fun FROM ANIMAL, FUNDACION WHERE ANIMAL.ID_Fund == FUNDACION.ID_Fund and ID_ANIMAL = ?";
+        try {
+            Connection conn = Conexion.getConnection();
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setInt(1, IDAnimal);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                animal = new Animal();
+                animal.setID_Animal(rs.getInt("ID_Animal"));
+                animal.setNombre_Animal(rs.getString("Nombre_Ani"));                
+                animal.setID_Fund(rs.getInt("ID_Fund"));
+                animal.setNombre_Fund(rs.getString("Nombre_Fun"));
+                animal.setTipo_Animal(rs.getString("Tipo"));
+                animal.setRaza_Animal(rs.getString("Raza"));
+                animal.setFotoMostrable(rs.getBytes("FOTO_ANIMAL"));
+
+            }
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+
+        return animal;
     }
 
     public static void crearFundacion(Fundacion Fundacion) {
@@ -202,14 +235,14 @@ public class CRUD {
         }
     }
 
-    public static ArrayList<Animal> LeerAnimales(){
+    public static ArrayList<Animal> LeerAnimales() {
         Connection conn = Conexion.getConnection();
         ArrayList<Animal> animales = new ArrayList<>();
         String sql = "SELECT ID_Animal, ANIMAL.ID_Fund, Nombre_Ani, Tipo, Raza, FOTO_ANIMAL, Nombre_Fun FROM ANIMAL, FUNDACION WHERE ANIMAL.ID_Fund == FUNDACION.ID_Fund";
-        try{
+        try {
             Statement sm = conn.createStatement();
             ResultSet rs = sm.executeQuery(sql);
-            while(rs.next()){
+            while (rs.next()) {
                 Animal animal = new Animal();
                 animal.setID_Animal(rs.getInt("ID_Animal"));
                 animal.setID_Fund(rs.getInt("ID_Fund"));
@@ -221,48 +254,51 @@ public class CRUD {
                 animales.add(animal);
             }
             conn.close();
-        }catch (SQLException e){
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
-            //e.printStackTrace();
+            // e.printStackTrace();
         }
         return animales;
     }
 
-    public static ArrayList<Animal> LeerAnimalesIDFundacion(int IdFund){
+    public static ArrayList<Animal> LeerAnimalesIDFundacion(int IdFund) {
         Connection conn = Conexion.getConnection();
         ArrayList<Animal> animales = new ArrayList<>();
-        String sql = "SELECT ID_Animal, ANIMAL.ID_Fund, Nombre_Ani, Tipo, Raza, FOTO_ANIMAL  FROM ANIMAL  WHERE ANIMAL.ID_Fund = " + IdFund;
-        try{
+        String sql = "SELECT ID_Animal, ANIMAL.ID_Fund, Nombre_Ani, Tipo, Raza, FOTO_ANIMAL  FROM ANIMAL  WHERE ANIMAL.ID_Fund = "
+                + IdFund;
+        try {
             Statement sm = conn.createStatement();
-            
+
             ResultSet rs = sm.executeQuery(sql);
-            while(rs.next()){
+            while (rs.next()) {
                 Animal animal = new Animal();
                 animal.setID_Animal(rs.getInt("ID_Animal"));
                 animal.setID_Fund(rs.getInt("ID_Fund"));
                 animal.setNombre_Animal(rs.getString("Nombre_Ani"));
                 animal.setTipo_Animal(rs.getString("Tipo"));
-                animal.setRaza_Animal(rs.getString("Raza"));                ;
+                animal.setRaza_Animal(rs.getString("Raza"));
+                ;
                 animal.setFotoMostrable(rs.getBytes("FOTO_ANIMAL"));
                 animales.add(animal);
             }
             conn.close();
-        }catch (SQLException e){
-            //System.out.println(e.getMessage());
+        } catch (SQLException e) {
+            // System.out.println(e.getMessage());
             e.printStackTrace();
         }
         return animales;
     }
 
-    public static ArrayList<Animal> LeerAnimalesCedula(int Cedula){
+    public static ArrayList<Animal> LeerAnimalesCedula(int Cedula) {
         Connection conn = Conexion.getConnection();
         ArrayList<Animal> animales = new ArrayList<>();
-        String sql = "SELECT ID_Animal, ANIMAL.ID_Fund, Nombre_Ani, Tipo, Raza, FOTO_ANIMAL FROM ANIMAL WHERE ANIMAL.Cedula = " + Cedula;
-        try{
+        String sql = "SELECT ID_Animal, ANIMAL.ID_Fund, Nombre_Ani, Tipo, Raza, FOTO_ANIMAL FROM ANIMAL WHERE ANIMAL.Cedula = "
+                + Cedula;
+        try {
             Statement sm = conn.createStatement();
-            
+
             ResultSet rs = sm.executeQuery(sql);
-            while(rs.next()){
+            while (rs.next()) {
                 Animal animal = new Animal();
                 animal.setID_Animal(rs.getInt("ID_Animal"));
                 animal.setID_Fund(rs.getInt("ID_Fund"));
@@ -273,57 +309,78 @@ public class CRUD {
                 animales.add(animal);
             }
             conn.close();
-        }catch (SQLException e){
-            //System.out.println(e.getMessage());
+        } catch (SQLException e) {
+            // System.out.println(e.getMessage());
             e.printStackTrace();
         }
         return animales;
     }
 
-    public static void updatePhotoUser(Usuario user){
+    public static void updatePhotoUser(Usuario user) {
         Connection conn = Conexion.getConnection();
         String query = "UPDATE USUARIO SET FOTO_PERFIL = ? WHERE Cedula = ?";
-        try{
+        try {
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setBytes(1, user.getFotoElegida());
             ps.setInt(2, user.getCedula());
             ps.executeUpdate();
             conn.close();
-        }catch(SQLException e){
+        } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
-        
 
     }
 
-    public static void updatePhotoFund(Fundacion fund){
+    public static void updatePhotoFund(Fundacion fund) {
         Connection conn = Conexion.getConnection();
         String query = "UPDATE FUNDACION SET FOTO_FUNDACION = ? WHERE ID_Fund = ?";
-        try{
+        try {
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setBytes(1, fund.getFotoElegida());
             ps.setInt(2, fund.getID_Fundacion());
             ps.executeUpdate();
             conn.close();
-        }catch(SQLException e){
+        } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
     }
 
-    public static void updateAnimalAdoptado(Usuario usr, int ID_Animal){
+    public static void updateAnimalAdoptado(Usuario usr, int ID_Animal) {
         Connection conn = Conexion.getConnection();
         String query = "UPDATE ANIMAL SET Cedula = ?, ID_Fund = NULL WHERE ID_Animal = ?";
-        try{
+        try {
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setInt(1, usr.getCedula());
             ps.setInt(2, ID_Animal);
             ps.executeUpdate();
             conn.close();
-        }catch(SQLException e){
+        } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
     }
 
-    
+    public static void crearAnimal(Animal animal, int fnd_id) {
+
+        Connection conn = Conexion.getConnection();
+        String consulta = "INSERT INTO ANIMAL(ID_Animal, ID_Fund, Cedula, Nombre_Ani, Tipo, Raza, FOTO_ANIMAL) VALUES (NULL,?, NULL, ?, ?, ?, ?)";
+        try {
+            PreparedStatement ps = conn.prepareStatement(consulta);
+
+            ps.setInt(1, fnd_id);
+            ps.setString(2, animal.getNombre_Animal());
+            ps.setString(3, animal.getTipo_Animal());
+            ps.setString(4, animal.getRaza_Animal());
+            ps.setBytes(5, animal.getFotoElegida());
+
+            ps.executeUpdate();
+
+            conn.close();
+
+        } catch (Exception e) {
+            // System.out.println("no ");
+            e.printStackTrace();
+        }
+
+    }
 
 }

@@ -11,13 +11,16 @@
 .cajaTexto {
   -fx-background-radius: 0 10 0 10;
   -fx-border-radius: 0 10 0 10;
+  border-radius: 0;
 }
 
 .boton {
     
   -fx-background-radius: 30 30 30 30;
   -fx-border-radius: 30 30 30 30;
-  
+  border-radius: 0;
+
+
   -fx-text-fill: rgb(255, 255, 255);
   
   -fx-background-color: rgb(5, 133, 87);
@@ -34,8 +37,6 @@
   border-color: rgb(5, 110, 72);
 }
 
-#botonAgregarAnimal{
-}
 
 .adoptarAnimal{
   -fx-background-color: rgb(207, 191, 169);
@@ -46,20 +47,26 @@
 #panelBusqueda{
   -fx-background-color: rgb(255, 255, 255);
   -fx-background-radius: 30 30 30 30;
+  background-color: 0;
 }
 
 .trasparent{
   -fx-background-color: rgba(0, 0, 0, 0);
+  background-color: 0;
 }
 
 .scrollPane{
   -fx-background: rgb(255, 234, 206);
   -fx-border-color: rgb(255, 234, 206);
+  background: 0;
+  border-color: 0;
 }
 
 #panelAnimalSeleccionado{
   -fx-background-radius: 30 30 30 30;
   -fx-background-color: rgb(255, 255, 255);
+  background-color: 0;
+
 }
 
 
@@ -69,13 +76,23 @@
 
 .animal{
   -fx-background-radius: 30 30 30 30;
+  -fx-background-color: white;
+  background-color: 0;
 }
 
 #botonAnimal:hover{
   -fx-background: rgb(211, 211, 211);
+  background: 0;
+}
+
+
+.animal:hover{
+  -fx-background-color: rgb(238, 238, 238);
+  background-color: 0;
 }
 
 /* 5, 133, 87
 /* 229, 211, 188
 /* 5, 110, 72
 /* 255, 234, 206
+

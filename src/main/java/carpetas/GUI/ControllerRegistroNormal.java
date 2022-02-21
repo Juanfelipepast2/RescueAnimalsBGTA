@@ -57,15 +57,21 @@ public class ControllerRegistroNormal {
 
     @FXML
     private void Volver(ActionEvent event) throws IOException {
+        /*
+
+        ESTE BLOQUE SOLO SE USA SI EL CONTROLADOR A USAR VA A RECIBIR INFORMACIÓN
+
         Parent root;
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/carpetas/view/InicioDeSesionNormal.fxml"));
         root = loader.load();
-        ControllerInicioDeSesion controlInicio = loader.getController();
+        //ControllerInicioDeSesion controlInicio = loader.getController();
         Scene scene = new Scene(root);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
+        */
+        Main.setRoot("/carpetas/view/InicioDeSesionNormal");
     }
 
     @FXML
@@ -111,15 +117,22 @@ public class ControllerRegistroNormal {
 
     @FXML
     void irRegistroFundacion(ActionEvent event) throws IOException {
+        
+        /*
+
+        ESTE BLOQUE SOLO SE USA SI EL CONTROLADOR A USAR VA A RECIBIR INFORMACIÓN
+        
         Parent root;
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/carpetas/view/RegistroFundacion.fxml"));
         root = loader.load();
-        ControllerRegistroFundacion controlFundacion = loader.getController();
+        //ControllerRegistroFundacion controlFundacion = loader.getController();
         Scene scene = new Scene(root);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        stage.show();
+        stage.show()
+        */;
+        Main.setRoot("/carpetas/view/RegistroFundacion");
     }
 
     void cambiarVentana(ActionEvent event, Usuario usr) throws IOException {

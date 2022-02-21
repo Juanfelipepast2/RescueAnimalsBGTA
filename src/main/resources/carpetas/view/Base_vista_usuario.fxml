@@ -42,7 +42,7 @@
                      </image>
                   </ImageView>
                </graphic></JFXButton>
-            <JFXButton fx:id="btnCerrarSesion" alignment="BASELINE_LEFT" maxHeight="60.0" minHeight="60.0" onAction="#cerrarSesion" prefHeight="40.0" prefWidth="200.0" styleClass="boton" text="CERRAR SESION">
+            <JFXButton fx:id="btnCerrarSesion" alignment="BASELINE_LEFT" maxHeight="60.0" minHeight="60.0" onAction="#cerrarSesion" prefHeight="40.0" prefWidth="200.0" styleClass="boton" text="SALIR">
                <font>
                   <Font size="19.0" />
                </font>

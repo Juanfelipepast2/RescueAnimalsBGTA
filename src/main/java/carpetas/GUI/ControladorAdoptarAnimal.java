@@ -1,10 +1,9 @@
 package carpetas.GUI;
 
-import java.io.ByteArrayInputStream;
-
-import java.net.URL;
+import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
+
+
 
 import carpetas.clases.Animal;
 import carpetas.clases.Usuario;
@@ -12,7 +11,7 @@ import carpetas.sql_clases.CRUD;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
+
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -56,61 +55,73 @@ public class ControladorAdoptarAnimal {
 
     @FXML
     void adoptar(ActionEvent event) {
-        CRUD.updateAnimalAdoptado(currentUser, currentAnimal.getID_Animal());
-        
+        try {            
+            
+            grid.getChildren().clear();
+            clear();
+            CRUD.updateAnimalAdoptado(currentUser, currentAnimal.getID_Animal());
+            initialize(currentUser);
+            
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     private Usuario currentUser;
 
     private Animal currentAnimal;
 
-
     private ArrayList<Animal> listaAnimales;
     private MyListener myListener;
 
+    private void elegirAnimal(Animal animal) {
+        try {
 
-    
+            currentAnimal = animal;
 
-    private void elegirAnimal(Animal animal){
-        try{
-        currentAnimal = animal;
-        nombreAnimalPanel.setText(animal.getNombre_Animal());
-        tipoAnimalPanel.setText(animal.getTipo_Animal());
-        razaAnimalPanel.setText(animal.getRaza_Animal());
-        fundacionAnimalPanel.setText(animal.getNombre_Fund());              
-        ByteArrayInputStream bin = animal.getFotoMostrable();
-        fotoAnimalPanel.setImage(new Image(bin));
-        
-        bin.reset();
-        }catch(Exception e){
+            nombreAnimalPanel.setText(animal.getNombre_Animal());
+            tipoAnimalPanel.setText(animal.getTipo_Animal());
+            razaAnimalPanel.setText(animal.getRaza_Animal());
+            fundacionAnimalPanel.setText(animal.getNombre_Fund());
+            InputStream bin = animal.getFotoMostrable();
+            fotoAnimalPanel.setImage(new Image(bin));
+
+            bin.reset();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    
-    public void initialize(Usuario user){
-        currentUser = user;
-        botonMiUsuario.setText(currentUser.getUsername());
+    public void initialize(Usuario user) {
+        imgUrl = fotoAnimalPanel.getImage().getUrl();
         getData();
+        currentUser = user;
 
-        if(listaAnimales.size() > 0) {
-            //elegirAnimal(listaAnimales.get(0));
+        botonMiUsuario.setText(currentUser.getUsername());
+
+        if (listaAnimales.size() > 0) {
+            // elegirAnimal(listaAnimales.get(0));
             myListener = new MyListener() {
                 @Override
                 public void onClickListener(Animal animal) {
+                    animal = CRUD.leerAnimal(animal.getID_Animal());
                     elegirAnimal(animal);
-                }   
+                }
+
             };
         }
 
         int columna = 0;
         int fila = 0;
 
-        try{
+        try {
 
-            for (int i = 0; i<listaAnimales.size(); i++){
+            for (int i = 0; i < listaAnimales.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/carpetas/view/Animal.fxml"));;
+                fxmlLoader.setLocation(getClass().getResource("/carpetas/view/Animal.fxml"));
+
                 VBox vbox = fxmlLoader.load();
 
                 ControladorAnimalItem item = fxmlLoader.getController();
@@ -118,17 +129,29 @@ public class ControladorAdoptarAnimal {
 
                 grid.add(vbox, columna, fila++);
 
-                GridPane.setMargin(vbox, new Insets(20));
+                GridPane.setMargin(vbox, new Insets(30));
             }
 
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-            //e.printStackTrace();
+        } catch (Exception e) {
+
+            e.printStackTrace();
         }
     }
 
-    private void getData(){
+    private void getData() {
+        listaAnimales = null;
         listaAnimales = CRUD.LeerAnimales();
 
+    }
+
+
+    private String imgUrl;
+
+    private void clear(){
+        nombreAnimalPanel.setText("Nombre del animal");
+        fotoAnimalPanel.setImage(new Image(imgUrl));
+        tipoAnimalPanel.setText("Tipo");
+        razaAnimalPanel.setText("Raza");
+        fundacionAnimalPanel.setText("Fundacion");
     }
 }

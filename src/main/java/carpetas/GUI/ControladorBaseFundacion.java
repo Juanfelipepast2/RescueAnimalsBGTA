@@ -40,7 +40,8 @@ public class ControladorBaseFundacion {
     private Pane mainPane;
 
     @FXML
-    void verFundacion(ActionEvent event) throws IOException{        
+    void verFundacion(ActionEvent event) throws IOException{  
+        fund = CRUD.leerCorreoFundacion(fund.getCorreo_Electronico_Fun());
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/carpetas/view/VistaFundacion.fxml"));;
         Pane pane = fxmlLoader.load();
@@ -83,18 +84,20 @@ public class ControladorBaseFundacion {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/carpetas/view/InicioDeSesionNormal.fxml"));
         root = loader.load();         
         
-        ControllerInicioDeSesion controlInicio = loader.getController();        
+        //ControllerInicioDeSesion controlInicio = loader.getController();        EL CONTROLADOR SOLO SE CARGA SI SE LE VA  A MANDAR INFORMACIÓN     
         Scene scene = new Scene(root);
         
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);        
+        stage.centerOnScreen();
         stage.show();
         
     }
 
-    void setFundacion(Fundacion fund){
+    void setFundacion(Fundacion fund) throws IOException{
         this.fund = fund;
         btnFundacion.setText(fund.getNombre_Fun());
+        verFundacion(new ActionEvent());
 
     }
 

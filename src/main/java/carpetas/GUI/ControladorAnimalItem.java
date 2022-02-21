@@ -25,15 +25,20 @@ public class ControladorAnimalItem {
     @FXML
     private Label tipoAnimalItem;
 
+    private Animal animal;
+    private MyListener myListener;
+
     @FXML
     private void click(MouseEvent mouseEvent){
         myListener.onClickListener(animal);
     }
 
-    private Animal animal;
-    private MyListener myListener;
+
+
+    
 
     public void initAnimal(Animal obj, MyListener myListener){
+        
         this.myListener = myListener;
         this.animal = obj;
         nombreAnimalItem.setText(obj.getNombre_Animal());
@@ -41,5 +46,6 @@ public class ControladorAnimalItem {
         razaAnimalItem.setText("Raza: " + obj.getRaza_Animal());
         tipoAnimalItem.setText("Tipo: " + obj.getTipo_Animal());
         fotoAnimalItem.setImage(new Image(obj.getFotoMostrable()));
+    
     }
 }

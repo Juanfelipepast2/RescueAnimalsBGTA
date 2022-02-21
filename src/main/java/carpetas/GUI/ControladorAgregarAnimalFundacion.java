@@ -2,29 +2,22 @@ package carpetas.GUI;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Font;
-import javafx.stage.FileChooser;
-
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 
 import carpetas.clases.Animal;
 import carpetas.clases.Fundacion;
-import carpetas.sql_clases.Conexion;
+import carpetas.sql_clases.CRUD;
 
 public class ControladorAgregarAnimalFundacion {
 
-    private ByteArrayOutputStream imagen;
-    private Animal animal;
     private Fundacion fnd;
+    private Animal animal = new Animal();
+    private String imgUrl;
 
     @FXML
     private Button botonAgregarAnimal;
@@ -61,64 +54,36 @@ public class ControladorAgregarAnimalFundacion {
 
     @FXML
     void AgregarAnimal(ActionEvent event) {
-
-        Connection conn = Conexion.getConnection();
-        String consulta = "INSERT INTO ANIMAL(ID_Animal, ID_Fund, Cedula, Nombre_Ani, Tipo, Raza, FOTO_ANIMAL) VALUES (NULL,?, NULL, ?, ?, ?, ?)";
         try {
-            PreparedStatement ps = conn.prepareStatement(consulta);
-
-            ps.setInt(1, fnd.getID());
-            ps.setString(2, textoNombreAnimal.getText());
-            ps.setString(3, textoTipoAnimal.getText());
-            ps.setString(4, textoRazaAnimal.getText());
-            ps.setBytes(5, imagen.toByteArray());
+            animal.setNombre_Animal(textoNombreAnimal.getText());
+            animal.setTipo_Animal(textoTipoAnimal.getText());
+            animal.setRaza_Animal(textoRazaAnimal.getText());
             
-            ps.executeUpdate();
-
-            conn.close();
-
+            
+            CRUD.crearAnimal(animal, fnd.getID());
         } catch (Exception e) {
-            //System.out.println("no ");
-            e.printStackTrace();
+            System.out.println(e);
         }
 
+        textoNombreAnimal.setText(null);
+        textoTipoAnimal.setText(null);
+        textoRazaAnimal.setText(null);
+        if(animal.getFotoElegida() != null){
+            vistaImagen.setImage(new Image(imgUrl));
+        }
     }
+
 
     @FXML
-    void InsertarFoto(ActionEvent event) {
-        try {
-
-            FileChooser fc = new FileChooser();
-            File archivoSeleccionado = fc.showOpenDialog(null);
-            System.out.println(archivoSeleccionado);
-            archivoSeleccionado.getAbsolutePath();
-
-            FileInputStream fis = null;
-
-            fis = new FileInputStream(archivoSeleccionado);
-            System.out.println(fis);
-            ByteArrayOutputStream bos = new ByteArrayOutputStream();
-            byte[] buffer = new byte[1024];
-            for (int readnum = 0; (readnum = fis.read(buffer)) != -1;) {
-                bos.write(buffer, 0, readnum);
-            }
-
-            fis.close();
-
-            vistaImagen.setImage(new Image(archivoSeleccionado.getAbsolutePath()));
-
-            imagen = bos;
-
-        } catch (Exception er) {
-            System.out.println("falle xd " + er);
-        }
-
+    void InsertarFoto(ActionEvent event){
+        imgUrl = vistaImagen.getImage().getUrl();
+        this.animal.selectImage();
+        vistaImagen.setImage(new Image(animal.getRutaFotoElegida()));
     }
 
-
-    void setFund(Fundacion fnd){
+    void setFund(Fundacion fnd) {
         this.fnd = fnd;
         System.out.println(this.fnd.getNombre_Fun());
     }
-     
+
 }
