@@ -46,12 +46,6 @@ public class ControllerInicioDeSesion {
     
     @FXML
     void irRegistro(ActionEvent event) throws IOException{
-        
-        /*
-
-
-        ESTE BLOQUE SOLO SE USA SI EL CONTROLADOR A USAR VA A RECIBIR INFORMACIÓN
-
 
         Parent root;
         
@@ -62,8 +56,8 @@ public class ControllerInicioDeSesion {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);        
         stage.show();
-        */
-        Main.setRoot("/carpetas/view/RegistroNormal");
+        
+        
     }
 
 

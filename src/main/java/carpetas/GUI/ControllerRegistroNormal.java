@@ -117,11 +117,6 @@ public class ControllerRegistroNormal {
 
     @FXML
     void irRegistroFundacion(ActionEvent event) throws IOException {
-        
-        /*
-
-        ESTE BLOQUE SOLO SE USA SI EL CONTROLADOR A USAR VA A RECIBIR INFORMACIÓN
-        
         Parent root;
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/carpetas/view/RegistroFundacion.fxml"));
@@ -130,9 +125,8 @@ public class ControllerRegistroNormal {
         Scene scene = new Scene(root);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        stage.show()
-        */;
-        Main.setRoot("/carpetas/view/RegistroFundacion");
+        stage.show();
+        
     }
 
     void cambiarVentana(ActionEvent event, Usuario usr) throws IOException {
