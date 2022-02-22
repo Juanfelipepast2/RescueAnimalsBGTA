@@ -78,7 +78,11 @@ public class ControladorAgregarAnimalFundacion {
     void InsertarFoto(ActionEvent event){
         imgUrl = vistaImagen.getImage().getUrl();
         this.animal.selectImage();
-        vistaImagen.setImage(new Image(animal.getRutaFotoElegida()));
+        try{
+        vistaImagen.setImage(new Image("file:/" + animal.getRutaFotoElegida()));
+        }catch(Exception e){
+            System.out.println(e + "Ërror");
+        }
     }
 
     void setFund(Fundacion fnd) {

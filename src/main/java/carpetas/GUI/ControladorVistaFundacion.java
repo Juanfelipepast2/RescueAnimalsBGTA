@@ -39,8 +39,10 @@ public class ControladorVistaFundacion {
     @FXML
     void cambiarImagen(ActionEvent event) {
         fund.selectImage();
-        imagenFundacion.setImage(new Image(fund.getRutaFotoElegida()));
         CRUD.updatePhotoFund(fund);
+        fund = CRUD.leerCorreoFundacion(fund.getCorreo_Electronico_Fun());
+        imagenFundacion.setImage(new Image(fund.getFotoMostrable()));
+        
     }
 
     void setFund(Fundacion fund){
